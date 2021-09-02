@@ -1,0 +1,90 @@
+body, html{
+    height: 100%;
+    background-color: 303438;
+    font-family: 'Ubuntu';
+}
+.bg {
+    /* The image used */
+    background-image: url("images/bg_image.png");
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+ul{
+    display: flex;
+}
+li{
+    display: block;
+    width: calc(410px / 4);
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+nav{
+    position: relative;
+    width: 410px;
+    height: 50;
+    background: #303438;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translate(-55%, -50%);
+    border: 2px solid #303438;
+    border-radius: 10px;
+}
+a{
+    color: white;
+    text-decoration: none;
+}
+article{
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width: 700px;
+    height: 100px;
+    background-color: rgb(216, 216, 216);
+    color: black;
+    border: 2px solid rgb(216, 216, 216);
+    border-radius: 10px;
+}
+.name{
+    color: white;
+    position: absolute;
+    left: 10%;
+    top: 60%;
+    font-family: 'Ubuntu';
+    font-size: 48px;
+
+}
+
+.picture{
+    position: relative;
+    left: 10%;
+    top: 10%;
+    height: 30px;
+    width: 30px;
+    border: 2px solid rgb(216, 216, 216);
+    border-radius: 10px;
+}
+.link{
+    color: blue;
+    text-decoration: blue;
+    position: absolute;
+    left: 30%;
+    top: 10%;
+    font-family: 'Ubuntu';
+    font-size: 22px;
+}

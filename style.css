@@ -1,4 +1,159 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
 body{
-    background-color: #303030;
-    color: white;
+    background-color: #121218;
+    color: rgb(202, 200, 200);
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 5%;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #10102b;
+}
+
+hr{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.logo{
+    letter-spacing: 5px;
+    font-size: 32px;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 14px;
+    color: rgb(202, 200, 200);
+    font-size: 20px;
+}
+
+.welcome{
+    font-size: 80px;
+    margin-top: 10%;
+    margin-left: 15%;
+}
+
+.title{
+    margin-left: 25%;
+    margin-top:3%;
+    font-size: 55px;
+    letter-spacing: 4px;
+}
+
+.container{
+    margin-left: 10%;
+    margin-top: 3%;
+    margin-right: 20%;
+    
+}
+
+.item{
+    background-color: #17171f;
+    align-items: center;
+    border-radius: 10px;
+    background-size: cover;
+    padding: 1rem;
+    margin-bottom: 5%;
+}
+
+.project-picture{
+    margin-left: 5%;
+}
+
+.project-title{
+    margin-top: 1%;
+    margin-left: 5%;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.project-description{
+    margin-top: 1%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+
+.project-button{
+    margin-left: 5%;
+    padding: 2% 10% 2% 10%;
+    border-radius: 10px;
+    border-style: none;
+    display: inline-block;
+    color: rgb(202, 200, 200);
+    font-size: 18px;
+    background-color: #10102b;
+}
+
+.project-button:hover{
+    border-radius: 50px;
+    background-color: rgb(1, 85, 1);
+    cursor: pointer;
+}
+
+.title-picture{
+    margin-left: 20%;
+    margin-top:3%; 
+    width: 60%;   
+}
+
+.block-text{
+    margin-top: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+    font-size: 22px;
+}
+
+.block-text a{
+    color: rgb(40, 40, 255);
+    text-decoration: none;
+}
+
+.block-text a:hover{
+    text-decoration: underline;
+}
+
+.paragraph{
+    margin-top: 5%;
+    margin-left: 25%;
+    margin-bottom: 5%;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 36px;
+}
+
+.outer-ul{
+    margin-left: 20%;
+}
+
+.topic-li{
+    margin-top: 3%;
+}
+
+.topic-li li{
+    margin-left: 5%;
 }

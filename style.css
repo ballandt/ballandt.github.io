@@ -26,6 +26,13 @@ hr{
     margin-bottom: 5%;
 }
 
+code{
+    background-color: rgb(41, 41, 41);
+    border-radius: 5px;
+    padding: 2px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 .logo{
     letter-spacing: 5px;
     font-size: 32px;
@@ -57,8 +64,9 @@ hr{
 }
 
 .title{
-    margin-left: 25%;
+    margin-left: 20%;
     margin-top:3%;
+    margin-right: 20%;
     font-size: 55px;
     letter-spacing: 4px;
 }
@@ -124,12 +132,13 @@ hr{
     margin-top: 2%;
     margin-left: 20%;
     margin-right: 20%;
+    margin-bottom: 3%;
     text-align: justify;
     font-size: 22px;
 }
 
 .block-text a{
-    color: rgb(40, 40, 255);
+    color: rgb(70, 70, 255);
     text-decoration: none;
 }
 
@@ -156,4 +165,31 @@ hr{
 
 .topic-li li{
     margin-left: 5%;
+}
+
+.contents{
+    margin-left: 20%;
+    list-style: none;
+    font-size: 20px;
+}
+
+.contents a{
+    color: rgb(70, 70, 255);
+    text-decoration: none;
+}
+
+.contents a:hover{
+    text-decoration: underline;
+}
+.contents li{
+    margin-bottom: 4px;
+}
+
+.list{
+    font-size: 18px;
+    margin-left: 20%;
+}
+
+.list li{
+    margin-bottom: 2px;
 }

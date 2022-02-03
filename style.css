@@ -5,18 +5,22 @@
 }
 
 body{
-    background-color: #121218;
-    color: rgb(202, 200, 200);
+    /* background-color: #121218; */
+    background-color: rgb(26, 25, 25);
+    color: rgb(228, 225, 225);
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 5%;
 }
 
 nav{
     display: flex;
+    position: fixed;
+    margin-top: 0%;
+    padding: 0;
+    width: 100%;
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background-color: #10102b;
+    background-color: #303030;
 }
 
 hr{
@@ -26,12 +30,12 @@ hr{
     margin-bottom: 5%;
 }
 
-code{
+/* code{
     background-color: rgb(41, 41, 41);
     border-radius: 5px;
     padding: 2px;
     font-family: 'Courier New', Courier, monospace;
-}
+} */
 
 .logo{
     letter-spacing: 5px;
@@ -59,14 +63,21 @@ code{
 
 .welcome{
     font-size: 80px;
-    margin-top: 10%;
     margin-left: 15%;
+    padding: 10%;
+}
+
+.home{
+    height: 100vh;
+    background-image: linear-gradient(to top right, #6D83F2 0%, #15ae4f 100%);
 }
 
 .title{
     margin-left: 20%;
-    margin-top:3%;
+    margin-top: 0%;
+    height: 20%;
     margin-right: 20%;
+    margin-bottom: 5%;
     font-size: 55px;
     letter-spacing: 4px;
 }
@@ -79,12 +90,17 @@ code{
 }
 
 .item{
-    background-color: #17171f;
+    background-color: rgb(32, 32, 32);
     align-items: center;
     border-radius: 10px;
     background-size: cover;
     padding: 1rem;
     margin-bottom: 5%;
+}
+
+.item:hover{
+    background-color: rgb(39, 39, 39);
+    border: solid rgb(126, 126, 126) 2px;
 }
 
 .project-picture{
@@ -113,12 +129,11 @@ code{
     display: inline-block;
     color: rgb(202, 200, 200);
     font-size: 18px;
-    background-color: #10102b;
+    background-color: #6D83F2;
 }
 
 .project-button:hover{
-    border-radius: 50px;
-    background-color: rgb(1, 85, 1);
+    background-color: #4863eb;
     cursor: pointer;
 }
 
@@ -130,8 +145,8 @@ code{
 
 .block-text{
     margin-top: 2%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 10%;
+    margin-right: 10%;
     margin-bottom: 3%;
     text-align: justify;
     font-size: 22px;
@@ -192,4 +207,150 @@ code{
 
 .list li{
     margin-bottom: 2px;
+}
+
+.docs{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16;
+}
+
+/* .docs table, th, td, ul.top, p, h1, h2, code, pre{
+    margin-left: 10%;
+    margin-right: 10%;
+} */
+
+/* .docs ul{
+    margin-top: 5px;
+}
+
+.docs ul.minor{
+    margin-left: 3%;
+}
+
+.docs table, th, td{
+    border: 1px solid rgb(202, 200, 200);
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+.docs .paragraph{
+    padding-left: 0%;
+}
+
+.docs nav{
+    font-family: 'Montserrat', sans-serif;
+} */
+
+.docs p a, a{
+    color: rgb(70, 70, 255);
+    text-decoration: none;
+}
+
+.docs a:hover{
+    text-decoration: underline;
+}
+
+.docs a:focus a::after{
+    color: rgb(70, 70, 255);
+}
+
+/* .docs code{
+    margin-top: 50%;
+} */
+
+.docs hr{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.docs h2{
+    margin-left: 20%;
+    font-size: 36px;
+    margin-bottom: 3%;
+}
+
+.docs p{
+    font-size: 16px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 2%;
+    text-align: justify;
+}
+
+.content-table{
+    font-size: 20px;
+    margin-left: 20%;
+}
+
+.content-table ul{
+    margin-left: 5%;
+    margin-bottom: 5px;
+}
+
+.content-table h2{
+    margin-left: 0;
+    font-size: 30px;
+    margin-bottom: 2%;
+}
+
+.code-line{
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(37, 37, 37);
+    margin-left: 20%;
+    width: 60%;
+    padding: 8px;
+    margin-bottom: 1%;
+}
+
+.code-line pre{
+    font-size: 14px;
+}
+
+.key{
+    color: rgb(255, 123, 0);
+}
+
+.inline{
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(58, 58, 58); 
+    padding: 2px;
+}
+
+.dir-content{
+    margin-left: 15%;
+    margin-bottom: 2%;
+}
+
+.dir-content code.mother{
+    font-size: 26px;
+}
+
+.dir-content code.child{
+    font-size: 34px;
+}
+
+.dir-content p{
+    margin: 1% 15% 5% 5%;
+}
+
+.docs table, th, td{
+    border: 1px solid rgb(202, 200, 200);
+    border-collapse: collapse;
+    padding: 15px;
+}
+
+.path p a{
+    color: white;
+    font-size: 20px;
+}
+
+.path p a:hover{
+    color: rgb(70, 70, 255);
+    text-decoration: none;
+}
+
+.path p{
+    font-size: 20px;
 }

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Avmath Documentation | Ballandt</title>
+        <link rel="stylesheet" href="../../../../style.css">
+    </head>
+    <body class="docs">
+        <nav>
+            <div class="logo">
+                <h4>Camillo Ballandt</h4>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../../">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="../../../p/">Projects</a></li>
+            </ul>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="path">
+            <p>
+                <a href="../../../../p/">Projects</a>
+                /
+                <a href="../../../avmath/">Avmath</a>
+                / Documentation
+            </p>
+        </div>
+
+        <center><h1 class="title">Avmath 3.1 documentation</h1></center>
+        <hr>
+        <div class="content-table">
+            <h2>Contents</h2>
+            <ul>
+                <li><a href="#installation">Installation</a></li>
+                <li>
+                    <a href="#root">Root</a>
+                    <ul>
+                        <li><a href="#constants">Constants</a></li>
+                        <li><a href="#functions">Arithmetic functions</a></li>
+                        <li><a href="#fractions">Fractions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./algebra/">Algebra</a>
+                    <ul>
+                        <li><a href="./algebra#tuple">Tuples</a></li>
+                        <li><a href="./algebra#vector">Vectors</a></li>
+                        <li><a href="./algebra#matrix">Matrices</a></li>
+                        <li><a href="./algebra#sle">Systems of linear equations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="./analysis/">Analysis</a>
+                    <ul>
+                        <li><a href="./analysis#point">Points</a></li>
+                        <li><a href="./analysis#function">Functions</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="installation">Installation</h2>
+
+        <p>
+            The avmath module is registered as a PyPi project and
+            can be downloaded via pip command:
+        </p>
+
+        <div class="code-line">
+            <code>pip install avmath</code>
+        </div>
+
+        <p>
+            After that, the module can be imported as follows.
+        </p>
+
+        <div class="code-line">
+            <pre>
+<span class="key">import</span> avmath
+<span class="key">from</span> avmath <span class="key">import</span> analysis, algebra</pre>
+        </div>
+
+        <p>
+            It can also manually been downloaded from GitHub as the
+            <a href="https://github.com/ballandt/avmath/releases">current release version</a>
+            or as archive of the active source code using the 
+            <code class="inline">code</code> button. Then unpack
+            the downloaded files and open command prompt in the unpacked
+            file:
+        </p>
+
+        <div class="code-line">
+            <pre>
+pip install .</pre>
+        </div>
+
+        <hr>
+
+        <h2 id="constants">Constants</h2>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">e</code>
+            <p>
+                Euler's number <i>e</i> to 21 correct digits.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">gamma</code>
+            <p>
+                Euler-Mascheroni constant &gamma; to 21 correct digits.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">phi</code>
+            <p>
+                Golden ration &phi; to 21 correct digits.
+            </p>
+        </div>
+        
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">pi</code>
+            <p>
+                Mathematical constant &pi; to 21 correct digits.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">two_digit_primes</code>
+            <p>
+                Contains a list of all two digit primes (primes &gt; 100).
+                Usefull if checks of primes are needed.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">_TAYLOR_DIFFERENCE</code>
+            <p>
+                Loops of functions using Taylor-series calculate until
+                the difference of the values is less or equal this value.
+                On default is set to <code class="inline">1e-16</code>. 
+                Can be altered if faster loops are needed.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">_MAX_CALCULATION_TIME</code>
+            <p>
+                Some loops may need a long time for calculation.
+                These loops may not calculate longer as 5 seconds.
+                Can be altered if assigned to a number (time in seconds).
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">REAL</code>
+            <p>
+                List of the name of all types containing real numbers.
+                Used for typehints.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">scope</code>
+            <p>
+                Dictionary of all mathematical constants and functions
+                needed for <a href="./analysis#function">analysis.Function</a>.
+            </p>
+        </div>
+
+        <hr>
+
+        <h2 id="functions">Arithmetic functions</h2>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">is_prime(x)</code>
+            <p>
+                Returns <code class="inline">True</code> if the integer <code class="inline">x</code>
+                is a prime number.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">is_even(x)</code>
+            <p>
+                Returns <code class="inline">True</code> if the integer <code class="inline">x</code>
+                is an even number.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">gdc(x, y)</code>
+            <p>
+                Function returning the greatest common divisor
+                of two integers.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">lcm(x, y)</code>
+            <p>
+                Function returning the least common multiply
+                of two integers.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">sgn(x)</code>
+            <p>
+                Function returning the signum function of a real number x.
+                Returns 1 for x &gt; 0, zero for x = 0 and -1 for x &lt; 0.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">fac(x [, opt])</code>
+            <p>
+                Returns the faculty (x!) of an integer like object. 
+                <code class="inline">opt</code> can take value <code class="inline">"double"</code>
+                for double faculty returning the product of all even numbers &le; x if x is 
+                even or all odd numbers &le; x if x is odd.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">ln(x)</code>
+            <p>
+                Returns the natural logarithm (logarithm with base <i>e</i>) of x.
+                Takes only values &gt; 0.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>1e-300 to 1e300</td>
+                    <td>12 digits</td>
+                </tr>
+                <tr>
+                    <td>1e-3 to 1e3</td>
+                    <td>14 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">log(x, base)</code>
+            <p>
+                Returns the logarithm of given base of x (log_{base} x).
+                Takes only values &gt; 0.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>1e-300 to 1e300</td>
+                    <td>12 digits</td>
+                </tr>
+                <tr>
+                    <td>1e-3 to 1e3</td>
+                    <td>14 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">sin(x)</code>
+            <p>
+                Returns the sine of x. The function is
+                recommended to use in the domain between
+                -100'000 and 100'000 because of inaccuracies
+                of the modulo operator that increase with the
+                value.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>-1e4 to 1e4</td>
+                    <td>12 digits</td>
+                </tr>
+                <tr>
+                    <td>-1e5 to 1e5</td>
+                    <td>10 digits</td>
+                </tr>
+                <tr>
+                    <td>-1e6 to 1e6</td>
+                    <td>9-10 digits</td>
+                </tr>
+            </table>
+        </div>
+
+    </body>
+</html>

@@ -214,33 +214,6 @@ hr{
     font-size: 16;
 }
 
-/* .docs table, th, td, ul.top, p, h1, h2, code, pre{
-    margin-left: 10%;
-    margin-right: 10%;
-} */
-
-/* .docs ul{
-    margin-top: 5px;
-}
-
-.docs ul.minor{
-    margin-left: 3%;
-}
-
-.docs table, th, td{
-    border: 1px solid rgb(202, 200, 200);
-    border-collapse: collapse;
-    padding: 10px;
-}
-
-.docs .paragraph{
-    padding-left: 0%;
-}
-
-.docs nav{
-    font-family: 'Montserrat', sans-serif;
-} */
-
 .docs p a, a{
     color: rgb(70, 70, 255);
     text-decoration: none;
@@ -272,7 +245,7 @@ hr{
 .docs p{
     font-size: 16px;
     margin-left: 20%;
-    margin-right: 20%;
+    margin-right: 40%;
     margin-bottom: 2%;
     text-align: justify;
 }
@@ -311,11 +284,19 @@ hr{
     color: rgb(255, 123, 0);
 }
 
+.number{
+    color: rgb(66, 146, 250);
+}
+
+.builtin{
+    color: rgb(224, 45, 224);
+}
+
 .inline{
     border: none;
-    border-radius: 8px;
+    border-radius: 6px;
     background-color: rgb(58, 58, 58); 
-    padding: 2px;
+    padding: 2px 5px 2px 5px;
 }
 
 .dir-content{
@@ -329,16 +310,18 @@ hr{
 
 .dir-content code.child{
     font-size: 34px;
+    font-weight: bold;
 }
 
 .dir-content p{
-    margin: 1% 15% 5% 5%;
+    margin: 1% 25% 5% 5%;
 }
 
 .docs table, th, td{
-    border: 1px solid rgb(202, 200, 200);
+    border: 1px solid rgb(46, 46, 46);
     border-collapse: collapse;
     padding: 15px;
+    margin-left: 5%;
 }
 
 .path p a{
@@ -353,4 +336,31 @@ hr{
 
 .path p{
     font-size: 20px;
+}
+
+blockquote{
+    margin-left: 15%;
+    padding-left: 2px;
+    border-left: 3px solid rgb(46, 46, 46);
+}
+
+blockquote div.dir-content{
+    margin-left: 2%;
+}
+
+blockquote h3{
+    margin-left: 4%;
+    margin-bottom: 2%;
+    font-size: 24px;;
+}
+
+blockquote h4{
+    margin-left: 4%;
+    margin-bottom: 2%;
+    margin-top: 2%;
+    font-size: 20px;
+}
+
+blockquote pre.code-line{
+    margin-left: 5%;
 }

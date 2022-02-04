@@ -10,9 +10,9 @@
                 <h4>Camillo Ballandt</h4>
             </div>
             <ul class="nav-links">
-                <li><a href="../../../">Home</a></li>
+                <li><a href="../../../../">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="../../../p/">Projects</a></li>
+                <li><a href="../../../../p/">Projects</a></li>
             </ul>
         </nav>
         <br>
@@ -39,6 +39,9 @@
                     <ul>
                         <li><a href="#constants">Constants</a></li>
                         <li><a href="#functions">Arithmetic functions</a></li>
+                        <li><a href="#logarithms">Logarithmic functions</a></li>
+                        <li><a href="#trigonometrics">Trigonometric functions</a></li>
+                        <li><a href="#hyperbolics">Hyperbolic functions</a></li>
                         <li><a href="#fractions">Fractions</a></li>
                     </ul>
                 </li>
@@ -242,6 +245,8 @@ pip install .</pre>
             </p>
         </div>
 
+        <h2 id="logarithms">Logarithmic functions</h2>
+
         <div class="dir-content">
             <code class="mother">avmath.</code>
             <code class="child">ln(x)</code>
@@ -290,6 +295,8 @@ pip install .</pre>
             </table>
         </div>
 
+        <h2 id="trigonometrics">Trigonometric functions</h2>
+
         <div class="dir-content">
             <code class="mother">avmath.</code>
             <code class="child">sin(x)</code>
@@ -320,6 +327,388 @@ pip install .</pre>
                 </tr>
             </table>
         </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">cos(x)</code>
+            <p>
+                Returns the cosine of x. The function is
+                recommended to use in the domain between
+                -100'000 and 100'000 because of inaccuracies
+                of the modulo operator that increase with the
+                value.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>-1e4 to 1e4</td>
+                    <td>12 digits</td>
+                </tr>
+                <tr>
+                    <td>-1e5 to 1e5</td>
+                    <td>10 digits</td>
+                </tr>
+                <tr>
+                    <td>-1e6 to 1e6</td>
+                    <td>9-10 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">tan(x)</code>
+            <p>
+                Returns the tangent of x. Inherites inaccuracies
+                from sine and cosine and is therefore
+                recommended to use in the domain between
+                -100'000 and 100'000 and is also inaccurate when
+                aproaching the asymptotes.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>-1e4 to 1e4 (normal case)</td>
+                    <td>12 digits</td>
+                </tr>
+                <tr>
+                    <td>-1e5 to 1e5 (normal case)</td>
+                    <td>10 digits</td>
+                </tr>
+                <tr>
+                    <td>-1e6 to 1e6 (normal case)</td>
+                    <td>9-10 digits</td>
+                </tr>
+                <tr>
+                    <td>1e-3 difference to asymptote</td>
+                    <td>10 digits</td>
+                </tr>
+                <tr>
+                    <td>1e-4 difference to asymptote</td>
+                    <td>7 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">arcsin(x)</code>
+            <p>
+                Function returning the arc sine of a number
+                -1 &le; x &le; 1. Calculation time increases
+                when aproaching x &rarr; |1|. Function may be
+                stopped by <code class="inline">_MAX_CALCULATION_TIME</code>. 
+            </p>
+
+            <table>
+                <tr>
+                    <th>Difference of x-value from |1|</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>&ge; 1e-1</td>
+                    <td>15 digits</td>
+                </tr>
+                <tr>
+                    <td>&ge; 1e-2</td>
+                    <td>13 digits</td>
+                </tr>
+                <tr>
+                    <td>&ge; 1e-3</td>
+                    <td>4</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">arccos(x)</code>
+            <p>
+                Function returning the arc cosine of a number -1 &ge; x &ge; 1.
+                Due to the usage of <code class="inline">arcsin</code>, the 
+                accuracy stays the same.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>-1e4 to 1e4</td>
+                    <td>12 digits</td>
+                </tr>
+                <tr>
+                    <td>-1e5 to 1e5</td>
+                    <td>10 digits</td>
+                </tr>
+                <tr>
+                    <td>-1e6 to 1e6</td>
+                    <td>9-10 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">arctan(x)</code>
+            <p>
+                Function that returns the arc tangent of x.
+                Calculation time increases when approaching x &rarr; |1|.
+            </p>
+
+            <table>
+                <tr>
+                    <th>absolute of x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>0 to 0.9</td>
+                    <td>14-15 digits</td>
+                </tr>
+                <tr>
+                    <td>|1 - x| &ge; 1e-2</td>
+                    <td>13-14 digits</td>
+                </tr>
+                <tr>
+                    <td>|1 - x| &ge; 1e-3</td>
+                    <td>13 digits</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>6 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2 id="hyperbolics">Hyperbolic functions</h2>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">sinh(x)</code>
+            <p>
+                Function returning the hyperbolic sine of x.
+                Domain is -710 &le; x &le; 710 else throws <code class="inline">ArgumentError</code>.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>-710 to 710</td>
+                    <td>14-15 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">cosh(x)</code>
+            <p>
+                Function returning the hyperbolic cos of x.
+                Domain is -710 &le; x &le; 710 else throws <code class="inline">ArgumentError</code>.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>-710 to 710</td>
+                    <td>14-15 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">tanh(x)</code>
+            <p>
+                Function that returns the hyperbolic tangent of x.
+                If x &gt; 20 returns sgn(x) &centerdot; 1.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>-20 to 20</td>
+                    <td>14-15 digits</td>
+                </tr>
+                <tr>
+                    <td>|x| > 20</td>
+                    <td>(sgn(x) &centerdot; 1)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">arsinh(x)</code>
+            <p>
+                Function returning the inverse hyperbolic sine
+                <i>Areasinus hyperbolicus</i> of a number. Domain
+                is restricted to -1e150 &le; x &le; 1e150 else causes
+                <code class="inline">OverflowError</code>.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>-1e150 to 1e150</td>
+                    <td>13-14 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">arcosh(x)</code>
+            <p>
+                Function returning the inverse hyperbolic cosine
+                <i>Areacosinus hyperbolicus</i> of a number. Domain
+                is restricted to -1e150 &le; x &le; 1e150 else causes
+                <code class="inline">OverflowError</code>.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>-20 to 20</td>
+                    <td>14-15 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">arcosh(x)</code>
+            <p>
+                Function returning the inverse hyperbolic tangent
+                <i>Areatangens hyperbolicus</i> of a number. Domain
+                is -1 &le; x &le; 1 else causes
+                <code class="inline">OverflowError</code>.
+            </p>
+
+            <table>
+                <tr>
+                    <th>x domain</th>
+                    <th>post comma precision</th>
+                </tr>
+                <tr>
+                    <td>-1 to 1</td>
+                    <td>12-14 digits</td>
+                </tr>
+            </table>
+        </div>
+
+        <h2 id="fraction">Fractions</h2>
+
+        <div class="dir-content">
+            <code class="mother">avmath.</code>
+            <code class="child">Fraction</code>
+        </div>
+
+        <blockquote>
+            <h3>Attributes</h3>
+
+            <div class="dir-content">
+                <code class="mother">Fraction.</code>
+                <code class="child">a</code>
+                <p>
+                    Numerator of the fraction.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Fraction.</code>
+                <code class="child">b</code>
+                <p>
+                    Denominator of the fraction.
+                </p>
+            </div>
+
+            <h3>Methods</h3>
+
+            <div class="dir-content">
+                <code class="mother">Fraction.</code>
+                <code class="child">__init__(numerator, denominator)</code>
+                <p>
+                    Initialises Fraction with given numerator and denominator.
+                    Arguments can be <code class="inline">int</code> <code class="inline">float</code>
+                    or <code class="inline">Fraction</code>. </p>
+                    <pre class="code-line">
+<span class="key">import</span> avmath
+
+my_fraction = avmath.Fraction(<span class="number">3</span>, <span class="number">7</span>)</pre>
+                <p>
+                    The Fraction is now initialised and ready to use.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Fraction.</code>
+                <code class="child">__repr__()</code>
+                <p>
+                    Returns a string representation of the fraction. Tries
+                    to return reducsd values. Built-in <code class="inline">repr</code>method can be
+                    used and this method is called by the <code class="inline">print</code> function.
+                </p>
+
+                    <pre class="code-line">
+<span class="key">import</span> avmath
+
+a = avmath.Fraction(<span class="number">2</span>, <span class="number">4</span>)
+b = avmath.Fraction(<span class="number">6</span>, <span class="number">3</span>)
+<span class="builtin">print</span>(a)
+<span class="builtin">print</span>(b)</pre>
+                <p>
+                    Gives the output
+                </p>
+                <pre class="code-line">1/2
+2</pre>
+            </div>
+
+            <h4>Mathematical operations</h4>
+            
+            <div class="dir-content">
+                <code class="mother">Fraction.</code>
+                <code class="child">__neg__()</code>
+                <p>
+                    Negation of a fraction. Sets numerator <code class="inline">a</code>
+                    to <code class="inline">-a</code>.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Fraction.</code>
+                <code class="child">__eq__(other)</code>
+                <p>
+                    Method for <code class="inline">==</code> operation.
+                    Can be used with <code class="inline">REAL</code> values.
+                </p>
+            </div>
+
+        </blockquote>
 
     </body>
 </html>

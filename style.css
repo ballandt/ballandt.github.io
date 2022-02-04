@@ -20,7 +20,7 @@ nav{
     justify-content: space-around;
     align-items: center;
     min-height: 8vh;
-    background-color: #303030;
+    background-image: linear-gradient(134deg, #6A98F0 0%, #4961DC 99%);
 }
 
 hr{

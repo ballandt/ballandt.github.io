@@ -5,5 +5,19 @@ function getParameter( parameterName ){
 }
 
 if(getParameter("docs") == "avmath"){
-    window.location.assign("./p/avmath/docs/");
+    if (!getParameter("v")){
+        window.location.assign("./p/avmath/docs/");
+    } else{
+        window.location.assign("./p/avmath/docs/"+getParameter("v"));
+    }
+}
+
+function update(selectId){
+    let select = document.getElementById(selectId);
+    return select.options[select.selectedIndex].value;
+}
+
+function selectVersion(){
+    let docsVersion = update('version-select');
+    window.location.assign("../"+docsVersion);
 }

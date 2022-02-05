@@ -5,7 +5,6 @@
 }
 
 body{
-    /* background-color: #121218; */
     background-color: rgb(26, 25, 25);
     color: rgb(228, 225, 225);
     font-family: 'Montserrat', sans-serif;
@@ -29,13 +28,6 @@ hr{
     margin-top: 5%;
     margin-bottom: 5%;
 }
-
-/* code{
-    background-color: rgb(41, 41, 41);
-    border-radius: 5px;
-    padding: 2px;
-    font-family: 'Courier New', Courier, monospace;
-} */
 
 .logo{
     letter-spacing: 5px;
@@ -242,6 +234,12 @@ hr{
     margin-bottom: 3%;
 }
 
+.docs h3{
+    margin-left: 20%;
+    font-size: 22px;
+    margin-bottom: 1%;
+}
+
 .docs p{
     font-size: 16px;
     margin-left: 20%;
@@ -324,6 +322,9 @@ hr{
     margin-left: 5%;
 }
 
+.path{
+}
+
 .path p a{
     color: white;
     font-size: 20px;
@@ -336,6 +337,7 @@ hr{
 
 .path p{
     font-size: 20px;
+    margin-right: 0;
 }
 
 blockquote{
@@ -364,3 +366,4 @@ blockquote h4{
 blockquote pre.code-line{
     margin-left: 5%;
 }
+

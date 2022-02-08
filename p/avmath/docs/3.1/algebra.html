@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Avmath Documentation | Ballandt</title>
+        <link rel="stylesheet" href="../../../../style.css">
+    </head>
+    <body class="docs">
+        <nav>
+            <div class="logo">
+                <h4>Camillo Ballandt</h4>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../../../">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="../../../../p/">Projects</a></li>
+            </ul>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="path">
+            <p>
+                <a href="../../../../p/">Projects</a>
+                /
+                <a href="../../../avmath/">Avmath</a>
+                / 
+                <a href="./">Documentation</a>
+                / algebra
+                <select name="docs-version" id="version-select" onChange="selectVersion()">
+                    <option value="3.2">dev 3.2</option>
+                    <option value="3.1" selected="selected">3.1</option>
+                    <option value="3.0">3.0</option>
+                    <option value="2.0">2.0</option>
+                    <option value="1.2">1.2</option>
+                </select>
+            </p>
+        </div>
+
+        <h1 class="title">Avmath 3.1 documentation - submodule algebra</h1>
+
+        <p>
+            The algebra submodule contains objects and methods for calculations with
+            linear algebra. It is separated from the root features and must be imported
+            using
+        </p>
+        <pre class="code-line">
+<span class="key">from</span> avmath <span class="key">import</span> algebra</pre>
+        <hr>
+
+        <div class="content-table">
+            <h2>Contents</h2>
+            <ul>
+                <li>
+                    <a href="#tuples">Tuples</a>
+                    <ul>
+                        <li><a href="#tup-att">Attributes</a></li>
+                        <li>
+                            <a href="#tup-met">Methods</a>
+                            <ul>
+                                <li><a href="#tup-met-pro">Processing methods</a></li>
+                                <li><a href="#tup-met-mat">Mathematical methods</a></li>
+                                <li><a href="#tup-met-sta">Static methods</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#vectors">Vectors</a></li>
+                <li><a href="#matrices">Matrices</a></li>
+                <li><a href="sles">Systems of linear equations</a></li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="tuples">Tuples</h2>
+
+        <p>
+            In the linear algebra, tuples are an ordered set of values a<sub>k</sub> with
+            a = (a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>n</sub>) &in; &real;<sup>n</sup>. Avmath algebra provides
+            an own Tuple class to handle algebraic operations.
+        </p>
+
+        <div class="dir-content">
+            <code class="mother">algebra.</code>
+            <code class="child">Tuple</code>
+        </div>
+        <blockquote>
+            <h3 id="tup-att">Attributes</h3>
+            <div class="dir-content">
+                <code class="mother">Tuple.</code>
+                <code class="child">_value</code>
+                <p>
+                    List that stores the values a<sub>k</sub> of the Tuple.
+                </p>
+            </div>
+        
+        <h3 id="tup-met">Methods</h3>
+        <h4 id="tup-met-pro">Processing methods</h4>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__init__(*args)</code>
+            <p>
+                Initialises the Tuple. Parameters can either be number values or
+                a list.
+            </p>
+            <pre class="code-line">
+<span class="key">from</span> avmath <span class="key">import</span> algebra
+
+<span class="comment"># Initialisation via numbers</span>
+a = algebra.Tuple(<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>)
+
+<span class="comment"># Initialisation via iterable object</span>
+b_list = [<span class="number">4</span>, <span class="number">3</span>, <span class="number">4.9</span>]
+b = algebra.Tuple(b)</pre>
+            <p>
+                Note: The Tuples a and b will be used in various examples
+                in which this code snippet is used.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__iter__()</code>
+            <p>
+                Returns generator to convert Tuple to another iterable
+                object.  Enables the usage of <code class="inline">iter</code> function
+                and type conversion to iterable datatypes and the usage in for-loops.
+            </p>
+            <pre class="code-line">
+                
+<span class="comment"># Usage of iter function</span>
+a_iterable = <span class="builtin">iter</span>(a)
+
+<span class="comment"># Usage of list function</span>
+a_list = <span class="builtin">list</span>(a)
+
+<span class="comment"># Usage of for loop</span>
+<span class="key">for</span> ele <span class="key">in</span> a:
+    <span class="builtin">print</span>(ele)
+</pre>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__getitem__(item)</code>
+            <p>
+                Returns the <code class="inline">item</code>th item
+                of a Tuple. Enables brackets notation:
+
+                <pre class="code-line">
+a_k = a[<span class="number">1</span>]</pre>
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__repr__()</code>
+            <p>
+                Method that returns string representation of the Tuple.
+                String representation corresponds with the built-in tuple.
+                This method enables the usage of <code class="inline">repr</code>
+                <code class="inline">str</code> and <code class="inline">print</code> functions.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__len__()</code>
+            <p>
+                Returns the length of a Tuple (equal with its dimension).
+                Enables the usage of the built-in <code class="inline">len</code> function.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">dim()</code>
+            <p>
+                See <code class="inline">Tuple.__len__()</code>
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">append(value)</code>
+            <p>
+                Returns a Tuple with the appended value. The initial Tuple
+                is not changed.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">no_fractions()</code>
+            <p>
+                Converts all Fraction members to floats.
+            </p>
+        </div>
+
+        <h4 id="tup-met-mat">Mathematical methods</h4>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__eq__(other)</code>
+            <p>
+                Method for the <code class="inline">==</code> operation.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__neg__</code>
+            <p>
+                Returns negative Tuple. All elements are multiplied
+                with -1.
+                Enables the usage of
+            </p>
+            <pre class="code-line">
+negative_a = -a</pre>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__add__(other)</code>
+            <p>
+                Method for addition with <code class="inline">+</code> operator.
+                Adds two Tuples c = a + b with c = (a<sub>0</sub> + b<sub>0</sub>, a<sub>1</sub> + b<sub>1</sub>, ..., a<sub>n</sub> + b<sub>n</sub>)
+                and a, b, c &in; &real;;<sup>n</sup>.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__sub__(other)</code>
+            <p>
+                Method for subtraction with <code class="inline">-</code> operator.
+                Subtracts two Tuples a - b &#8788; a + (-b).
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__mul__(other)</code>
+            <p>
+                Method for multiplication with <code class="inline">*</code> operator.
+                Calculates scalar multiplication of t &centerdot; a &#8788; (t &centerdot; a<sub>0</sub>, t &centerdot; a<sub>1</sub>, ..., t &centerdot; a<sub>n</sub>)
+                with t &in; &real;, a &in; &real;<sup>n</sup>.
+                Order for operation is not important.
+            </p>
+            <pre class="code-line">
+t = <span class="number">2</span>
+t_a = t * a 
+a_t = a * t 
+t_a == a_t <span class="comment"># True</span></pre>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__truediv__(other)</code>
+            <p>
+                Method for division with <code class="inline">/</code> operator.
+                Scalar multiplication with 1 / <code class="inline">other</code>. 
+                Members a<sub>k</sub> become Fractions to avoid inaccuracies due to
+                float division.
+            </p>
+        </div>
+
+        <h4 id="tup-met-sta">Static methods</h4>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">dim_check(*args)</code>
+            <p>
+                Checks if given Tuple arguments have the same amount of
+                dimensions. In this case returns <code class="inline">True</code>, 
+                else <code class="inline">False</code>.
+            </p>
+        </div>
+        </blockquote>
+
+        <h2 id="vectors">Vectors</h2>
+
+        <p>
+            The linear algebra does not see any difference between a tuple and 
+            a vector. Yet, in geometrical constructions it can be helpful to distinguish
+            between points and sides of a figure. In avmath, the Tuple is generally seen 
+            as a point and a Vector as a side. The vector class provides also some additional
+            typical vector features.
+        </p>
+
+        <div class="dir-content">
+            <code class="mother">algebra.</code>
+            <code class="child">Vector</code>
+        </div>
+
+        <p>
+            The Vector class inherites all methods from the Tuple class.
+            If there are no methods to overwrite them, they can be used.
+        </p>
+
+        <blockquote>
+
+            <h3 id="vec-met">Methods</h3>
+            <h4 id="vec-met-pro">Processing methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__init__(*args [, begin, end])</code>
+                <p>
+                    Initialisation of a Vector object. Takes either number arguments, vectorizes a 
+                    Tuple or is initialised by giving a point of beginning and end as tuples. In this case,
+                    the specific begin and end values are not saved.
+                </p>
+                <pre class="code-line">
+<span class="key">from</span> avmath <span class="key">import</span> algebra
+
+<span class="comment"># Initialisation via numbers</span>
+u = algebra.Vector(<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>)
+
+<span class="comment"># Initialisation via vectorisation</span>
+a = algebra.Tuple(<span class="number">2</span>, <span class="number">5</span>, <span class="number">2</span>)
+v = algebra.Vector(a)
+
+<span class="comment"># Initialisation with begin and end</span>
+b = algebra.Tuple(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">0</span>)
+c = algebra.Tuple(<span class="number">4</span>, <span class="number">5</span>, <span class="number">8</span>)
+w = algebra.Vector(begin=b, end=c)
+                </pre>
+            </div>
+        </blockquote>
+
+    </body>

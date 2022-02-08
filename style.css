@@ -1,3 +1,9 @@
+:root{
+    --white: rgb(228, 225, 225);
+    --black: rgb(26, 25, 25);
+    --link: rgb(62, 75, 255);
+}
+
 *{
     margin: 0px;
     padding: 0px;
@@ -5,8 +11,8 @@
 }
 
 body{
-    background-color: rgb(26, 25, 25);
-    color: rgb(228, 225, 225);
+    background-color: var(--black);
+    color: var(--white);
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -49,7 +55,7 @@ hr{
     letter-spacing: 3px;
     font-weight: bold;
     font-size: 14px;
-    color: rgb(202, 200, 200);
+    color: var(--white);
     font-size: 20px;
 }
 
@@ -79,6 +85,10 @@ hr{
     margin-top: 3%;
     margin-right: 20%;
     
+}
+
+.container img{
+    max-width: 70%;
 }
 
 .item{
@@ -119,7 +129,7 @@ hr{
     border-radius: 10px;
     border-style: none;
     display: inline-block;
-    color: rgb(202, 200, 200);
+    color: var(--white);
     font-size: 18px;
     background-color: #6D83F2;
 }
@@ -145,7 +155,7 @@ hr{
 }
 
 .block-text a{
-    color: rgb(70, 70, 255);
+    color: var(--link);
     text-decoration: none;
 }
 
@@ -181,7 +191,7 @@ hr{
 }
 
 .contents a{
-    color: rgb(70, 70, 255);
+    color: var(--link);
     text-decoration: none;
 }
 
@@ -207,7 +217,7 @@ hr{
 }
 
 .docs p a, a{
-    color: rgb(70, 70, 255);
+    color: var(--link);
     text-decoration: none;
 }
 
@@ -216,12 +226,8 @@ hr{
 }
 
 .docs a:focus a::after{
-    color: rgb(70, 70, 255);
+    color: var(--link);
 }
-
-/* .docs code{
-    margin-top: 50%;
-} */
 
 .docs hr{
     margin-left: 20%;
@@ -243,7 +249,7 @@ hr{
 .docs p{
     font-size: 16px;
     margin-left: 20%;
-    margin-right: 40%;
+    margin-right: 20%;
     margin-bottom: 2%;
     text-align: justify;
 }
@@ -290,6 +296,10 @@ hr{
     color: rgb(224, 45, 224);
 }
 
+.comment{
+    color: gray;
+}
+
 .inline{
     border: none;
     border-radius: 6px;
@@ -312,7 +322,7 @@ hr{
 }
 
 .dir-content p{
-    margin: 1% 25% 5% 5%;
+    margin: 1% 20% 5% 5%;
 }
 
 .docs table, th, td{
@@ -322,16 +332,13 @@ hr{
     margin-left: 5%;
 }
 
-.path{
-}
-
 .path p a{
-    color: white;
+    color: var(--white);
     font-size: 20px;
 }
 
 .path p a:hover{
-    color: rgb(70, 70, 255);
+    color: var(--link);
     text-decoration: none;
 }
 
@@ -363,7 +370,29 @@ blockquote h4{
     font-size: 20px;
 }
 
+blockquote p{
+    margin-left: 0%;
+}
+
 blockquote pre.code-line{
     margin-left: 5%;
 }
 
+.feature-topic{
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    color: var(--white);
+}
+
+.feature-sub{
+    font-size: 20px;
+    margin-left: 10%;
+    margin-bottom: 1%;
+    color: var(--white);
+}
+
+.feature-topic:hover, .feature-sub:hover{
+    color: var(--link);
+}

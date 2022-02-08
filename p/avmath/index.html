@@ -6,6 +6,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="icon" href="./avmath.svg">
+
     </head>
     <body>
         <nav>
@@ -37,13 +39,105 @@
         <h2 class="paragraph">Contents</h2>
 
         <ul class="contents">
-            <li><a href="https://github.com/ballandt/avmath">GitHub repository</a></li>
-            <li><a href="./docs/">Documentation</a></li>
-            <li><a href="./getting-started.html">Getting started</a></li>
             <li><a href="#features">Features</a></li>
+            <li><a href="./getting-started/">Getting started</a></li>
+            <li><a href="./docs/">Documentation</a></li>  
+            <li><a href="./dev/">Developments</a></li>  
+            <li><a href="https://github.com/ballandt/avmath">GitHub repository</a></li>            
             <li><a href="https://github.com/ballandt/avmath/releases">Releases</a></li>
-            <li><a href="./dev/">Developments</a></li>
         </ul>
+
+        <hr>
+
+        <h2 class="paragraph" id="features">Features</h2>
+
+        <a href="./docs/"><h3 class="feature-topic">Basic features</h3></a>
+        <a href="./docs/?a=fraction"><h3 class="feature-sub">Fractions</h3></a>
+
+        <p class="block-text">
+            Avmath provides a datatype for fractions for the 
+            purpose of easy calculations. It can be used with
+            other number types because it contains methods for
+            mathematical operations with the built-in operators
+            as +, -, * and /. Fractions with integer values can be reduced.
+        </p>
+
+        <a href="./docs/?a=functions"><h3 class="feature-sub">Functions</h3></a>
+
+        <p class="block-text">
+            The module contains various functions for arithmetic
+            usage as the greatest common divisor or the detection
+            of prime numbers. It also gives access to mathematical
+            functions as the sine or cosine or logarithms of a real
+            number.
+        </p>
+
+        <a href="./docs/?a=constants"><h3 class="feature-sub">Constants</h3></a>
+
+        <p class="block-text">
+            Avmath enables the usage of mathematical constants as &pi; 
+            or <i>e</i> or a list of all two digit prime numbers.
+        </p>
+
+        <a href="./docs/?s=algebra.html"><h3 class="feature-topic">Linear algebra</h3></a>
+
+        <p class="block-text">
+            The linear algebra is an important mathematical domain and has many 
+            usages in programming. The avmath submodule algebra deals with algebraic
+            objects and their relations.
+        </p>
+
+        <a href="./docs/?s=algebra.html&a=tuples"><h3 class="feature-sub">Tuples</h3></a>
+
+        <p class="block-text">
+            Algebraic tuples can be used to store and manipulate number values
+            or serve as point in geometrical constructions.
+        </p>
+
+        <a href="./docs/?s=algebra.html&a=vectors"><h3 class="feature-sub">Vectors</h3></a>
+
+        <p class="block-text">
+            Vectors are useful objects for calculations in mathematics and natural sciences.
+            The avmath algebra vector class provides a wide span of features for vector operations.
+        </p>
+
+        <a href="./docs/?s=algebra.html&a=matrices"><h3 class="feature-sub">Matrices</h3></a>
+
+        <p class="block-text">
+            Avmath matrices contain many important methods for an easy handling of complicated matrix operations.
+            The algorithms can serve for simple matrix addition or multiplication for the calculation of determinants
+            and solve eigenvalue problems.
+        </p>
+
+        <a href="./docs/?s=algebra.html&a=sles"><h3 class="feature-sub">Systems of linear equations</h3></a>
+
+        <p class="block-text">
+            SLEs are a part of many mathematical or engineering problems. The library provides easy-to-use features for
+            the declaration and solution of the systems.
+        </p>
+
+        <a href="./docs/?s=analysis.html"><p3 class="feature-topic">Analysis / Calculus</p3></a>
+
+        <p class="block-text">
+            The field of calculus has wide possibilities of usage in many aspects of programming. Avmath helps with
+            easy usable tools for many calculations.
+        </p>
+
+        <a href="./docs/?s=analysis.html&a=function"><h3 class="feature-sub">Common functions</h3></a>
+
+        <p class="block-text">
+            Any imaginable function <i>f(x)</i> can be implemented in your program using the avmath analysis function.
+            The function terms can be given as strings to give a maximum of flexibility. The class supports combinations
+            of functions finds roots, extrema and can calculate derivatives and certain integrals.
+        </p>
+
+        <a href="./docs/?s=analysis.html&a=polynomial"><h3 class="feature-sub">Polynomial functions</h3></a>
+
+        <p class="block-text">
+            Polynomials are one of the most used function types. Avmath performs addition and multiplication methods finds real
+            and complex roots of polynomials and can calculate extrema. The methods for infinitesimal calculations contain derivative values
+            and functions and certain and incertain integrals.
+        </p>
 
         <hr>
         
@@ -71,93 +165,6 @@
                 Visit CHANGELOG
             </a>
         </p>
-
-        <hr>
-
-        <h2 class="paragraph" id="features">Features</h2>
-
-        <ul class="outer-ul">
-            <li class="topic-li"><p><a href="Avmath-root">Basic features</a></p>
-                <ul>
-                <li><strong>fractions</strong><ul>
-                <li>Basic operations</li>
-                <li>reducing</li>
-                </ul>
-                </li>
-                <li><strong>primes</strong><ul>
-                <li>detection of primes</li>
-                <li>primes &lt; 100</li>
-                </ul>
-                </li>
-                <li><strong>trigonometry</strong><ul>
-                <li>trigonometrical functions (sine, cosine, tangent)</li>
-                <li>inverse trigonometrical functions (arc sine, arc cosine, arc tangent)</li>
-                <li>hyperbolic functions (hyperbolic sine, hyp. cosine, hyp. tangent)</li>
-                <li>inverted hyperbolic functions (inverse hyp. sine, inv. hyp. cosine, inv. hyp. tangent)</li>
-                </ul>
-                </li>
-                <li><strong>faculties</strong><ul>
-                <li>simple and double faculties</li>
-                </ul>
-                </li>
-                <li><strong>constants</strong><ul>
-                <li>pi</li>
-                <li>e</li>
-                <li>phi</li>
-                <li>gamma</li>
-                </ul>
-                </li>
-                </ul>
-            </li>
-            <li class="topic-li"><p><a href="algebra">Linear algebra</a></p>
-                <ul>
-                <li><strong>tuples</strong><ul>
-                <li>Basic iterable operations</li>
-                <li>basic mathematical operations</li>
-                <li>parent class for vector and matrix</li>
-                </ul>
-                </li>
-                <li><strong>vectors</strong><ul>
-                <li>basic operations</li>
-                <li>vector product, spat product</li>
-                <li>angle between vectors</li>
-                </ul>
-                </li>
-                <li><strong>matrices</strong><ul>
-                <li>matrix visual representation</li>
-                <li>basic operations</li>
-                <li>determinant</li>
-                <li>transposed matrix</li>
-                <li>cofactor matrix</li>
-                <li>adjunct of matrix</li>
-                <li>inverse matrix</li>
-                <li>row echelon form, reduced row echelon form</li>
-                <li>rank of a matrix</li>
-                </ul>
-                </li>
-                <li><strong>point structures</strong><ul>
-                <li>circumference</li>
-                <li>area</li>
-                </ul>
-                </li>
-                <li><strong>systems of linear equations</strong></li>
-                </ul>
-            </li>
-                <li class="topic-li"><p><a href="analysis">Analysis</a></p>
-                <ul>
-                <li><strong>functions</strong><ul>
-                <li>usual input possibility</li>
-                <li>basic calculations</li>
-                <li>maxima / minima</li>
-                <li>roots</li>
-                <li>numerical first and second differentiation</li>
-                <li>numerical integral</li>
-                <li>tangent and normal functions</li>
-                </ul>
-                </li>
-                </ul>
-            </li>
-        </ul> 
 
     </body>
 </html>

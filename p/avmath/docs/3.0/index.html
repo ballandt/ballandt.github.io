@@ -27,15 +27,15 @@
                 / Documentation
                 <select name="docs-version" id="version-select" onChange="selectVersion()">
                     <option value="3.2">dev 3.2</option>
-                    <option value="3.1" selected="selected">3.1</option>
-                    <option value="3.0">3.0</option>
+                    <option value="3.1">3.1</option>
+                    <option value="3.0" selected>3.0</option>
                     <option value="2.0">2.0</option>
                     <option value="1.2">1.2</option>
                 </select>
             </p>
         </div>
 
-        <center><h1 class="title">Avmath 3.1 documentation</h1></center>
+        <center><h1 class="title">Avmath 3.0 documentation</h1></center>
         <hr>
         <div class="content-table">
             <h2>Contents</h2>
@@ -684,8 +684,7 @@ pip install .</pre>
                 <code class="child">__init__(numerator, denominator)</code>
                 <p>
                     Initialises Fraction with given numerator and denominator.
-                    Arguments can be <code class="inline">int</code> <code class="inline">float</code>
-                    or <code class="inline">Fraction</code>. </p>
+                    Arguments can be <code class="inline">int</code> or <code class="inline">float</code> </p>
                     <pre class="code-line">
 <span class="key">import</span> avmath
 
@@ -872,16 +871,6 @@ b = avmath.Fraction(<span class="number">6</span>, <span class="number">3</span>
                 <p>
                     Returns float representation of the Fraction. Is used by
                     built-in <code class="inline">float</code> function.
-                </p>
-            </div>
-
-            <div class="dir-content">
-                <code class="mother">Fraction.</code>
-                <code class="child">__complex__()</code>
-                <p>
-                    Returns complex representation of the Fraction. Is used by
-                    built-in <code class="inline">complex</code> function. Real part
-                    is calculated with <code class="inline">__float__</code> method.
                 </p>
             </div>
 

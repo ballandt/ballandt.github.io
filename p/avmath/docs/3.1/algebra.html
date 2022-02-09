@@ -65,7 +65,18 @@
                         </li>
                     </ul>
                 </li>
-                <li><a href="#vectors">Vectors</a></li>
+                <li>
+                    <a href="#vectors">Vectors</a>
+                    <ul>
+                        <li><a href="#vec-met">Methods</a></li>
+                        <ul>
+                            <li><a href="#vec-met-pro">Processing methods</a></li>
+                            <li><a href="#vec-met-mat">Mathematical methods</a></li>
+                            <li><a href="#vec-met-sta">Static methods</a></li>
+                        </ul>
+                    </ul>
+                </li>
+                <li><a href="#structures">Structures</a></li>
                 <li><a href="#matrices">Matrices</a></li>
                 <li><a href="sles">Systems of linear equations</a></li>
             </ul>
@@ -280,6 +291,8 @@ t_a == a_t <span class="comment"># True</span></pre>
         </div>
         </blockquote>
 
+        <hr>
+
         <h2 id="vectors">Vectors</h2>
 
         <p>
@@ -328,6 +341,162 @@ b = algebra.Tuple(<span class="number">-1</span>, <span class="number">2</span>,
 c = algebra.Tuple(<span class="number">4</span>, <span class="number">5</span>, <span class="number">8</span>)
 w = algebra.Vector(begin=b, end=c)
                 </pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">leading_zeros()</code>
+
+                <p>
+                    Returns the number of the leading zeros of a vector. Important for
+                    matrix Gauss-methods.
+                </p>
+                <pre class="code-line">
+u = algebra.Vector(<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>)
+v = algebra.Vector(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>)
+w = algebra.Vector(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)
+
+leading_zeros = u.leading_zeros() <span class="comment"># 1</span>
+leading_zeros = v.leading_zeros() <span class="comment"># 0</span>
+leading_zeros = w.leading_zeros() <span class="comment"># 3</span></pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">no_fractions()</code>
+
+                <p>
+                    Returns vector with no <code class="inline">Fraction</code> members.
+                </p>
+            </div>
+
+            <h4 id="vec-met-mat">Mathematical methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__abs__()</code>
+
+                <p>
+                    Returns the absolute (pythagorean length) of
+                    a vector. The built-in function <code class="inline">abs</code>
+                    can be used.
+                </p>
+                <pre class="code-line">
+u_abs = <span class="builtin">abs</span>(u)</pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__add__(other)</code>
+
+                <p>
+                    Method for vector addition. Mathematically identic 
+                    with tuple addition. <code class="inline">+</code>
+                    operator can be used.
+                </p>
+                <pre class="code-line">
+sum = u + v</pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__sub__(other)</code>
+
+                <p>
+                    Subtraction method for vectors. Uses a - b = a + (-b).
+                    <code class="inline">-</code> operator can be used.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__mul__(other)</code>
+
+                <p>
+                    <ul>
+                        <li>
+                            If <code class="inline">other</code> is a number,
+                            calculates the scalar multiplication, see <code class="inline">Tuple.__mul__</code>
+                        </li>
+                        <li>
+                            If <code class="inline">other</code> is another vector, calculates the scalar product
+                            a<sub>0</sub> &centerdot;  b<sub>0</sub> + a<sub>1</sub> &centerdot;  b<sub>1</sub> + ... + a<sub>n</sub> &centerdot;  b<sub>n</sub>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__truediv__(other)</code>
+
+                <p>
+                    Scalar multiplication with 1/<code class="inline">other</code>. 
+                    Enables usage of Fractions. <code class="inline">/</code> sign can be used.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__pow__(power)</code>
+
+                <p>
+                    Power method for vectors. Takes only integers [0, &infin;) &in; &integers; as arguments.
+                    <code class="inline">power</code>=0 returns specific unit vector
+                    All other powers return a <i>n</i> times vector.
+                </p>
+                <pre class="code-line">
+e = u ** 0 <span class="comment"># unit vector</span>
+u_squared = u ** 2 <span class="comment"># u * u (a scalar value)</span>
+u_cube = u ** 3
+<span class="comment"># u * u * u (a vector value - scalar (u * u)</span>
+<span class="comment"># multiplied with a vector gives a vector.</span>
+                </pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">cross(other)</code>
+
+                <p>
+                    Returns the cross product or vector product <i>v&#x20d7;</i> &times; <i>w&#x20d7;</i>. Can only be used
+                    for vectors <i>v&#x20d7;</i>, <i>w&#x20d7;</i> &in; &real;<sup>3</sup>. 
+                </p>
+                <pre class="code-line">
+cross_vector = v.cross(w)</pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">unit()</code>
+
+                <p>
+                    Returns a vector with same direction, but absolute length 1.
+                </p>
+            </div>
+
+            <h4 id="vec-met-sta">Static methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">spat(u, v, w)</code>
+
+                <p>
+                    Method for spat product of three vectors (<i>u&#x20d7;</i> &times; <i>v&#x20d7;</i> ) &centerdot; <i>w&#x20d7;</i>.
+                </p>
+                <pre class="code-line">
+spat = algebra.Vector.spat(u, v, w)</pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">angle(u, v)</code>
+
+                <p>
+                    Returns the angle between two vectors in radians.
+                </p>
+                <pre class="code-line">
+angle = algebra.Vector.angle(u, v)</pre>
             </div>
         </blockquote>
 

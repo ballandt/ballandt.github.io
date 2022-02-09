@@ -378,6 +378,11 @@ blockquote pre.code-line{
     margin-left: 5%;
 }
 
+blockquote ul{
+    margin-left: 5%;
+    margin-top: 0%;
+}
+
 .feature-topic{
     font-size: 26px;
     font-weight: bold;

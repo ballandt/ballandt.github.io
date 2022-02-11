@@ -278,6 +278,7 @@ hr{
     width: 60%;
     padding: 8px;
     margin-bottom: 1%;
+    min-width: fit-content;
 }
 
 .code-line pre{
@@ -323,6 +324,10 @@ hr{
 
 .dir-content p{
     margin: 1% 20% 5% 5%;
+}
+
+.dir-content ul{
+    margin-right: 20%;
 }
 
 .docs table, th, td{
@@ -400,4 +405,17 @@ blockquote ul{
 
 .feature-topic:hover, .feature-sub:hover{
     color: var(--link);
+}
+
+.sle{
+    border-left: 2px solid var(--white);
+    border-right: 2px solid var(--white);
+    margin-left: 5%;
+    padding: 5px;
+    width: 290px;
+}
+
+.sle p{
+    margin-bottom: 1px;
+    margin-right: 0;
 }

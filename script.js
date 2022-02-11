@@ -17,7 +17,8 @@ function update(selectId){
     return select.options[select.selectedIndex].value;
 }
 
-function selectVersion(){
+function selectVersion(sub = ""){
+    console.log("hallo");
     let docsVersion = update('version-select');
-    window.location.assign("../"+docsVersion);
+    window.location.assign("../"+docsVersion+"/"+sub);
 }

@@ -28,8 +28,8 @@
                 <a href="./">Documentation</a>
                 / algebra
                 <select name="docs-version" id="version-select" onChange="selectVersion('algebra.html')">
-                    <option value="3.2">dev 3.2</option>
-                    <option value="3.1" selected="selected">3.1</option>
+                    <option value="3.2" selected>dev 3.2</option>
+                    <option value="3.1" >3.1</option>
                     <option value="3.0">3.0</option>
                     <option value="2.0">2.0</option>
                     <option value="1.2">1.2</option>
@@ -37,7 +37,7 @@
             </p>
         </div>
 
-        <h1 class="title">Avmath 3.1 documentation - submodule algebra</h1>
+        <h1 class="title">Avmath 3.2 documentation - submodule algebra</h1>
 
         <p>
             The algebra submodule contains objects and methods for calculations with
@@ -510,6 +510,16 @@ cross_vector = v.cross(w)</pre>
                 </p>
             </div>
 
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">orthogonal(*args)</code>
+
+                <p>
+                    Returns a list of the orthogonal projections of the <code class="inline">args</code>
+                    to the self vector.
+                </p>
+            </div>
+
             <h4 id="vec-met-sta">Static methods</h4>
 
             <div class="dir-content">
@@ -935,6 +945,34 @@ negative_A = -A</pre>
 
                 <p>
                     Returns reduced row echelon form of a matrix.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">qr()</code>
+
+                <p>
+                    Returns two matrices that are qr decomposed matrices of the given matrix.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">eigenvalues([mode=complex])</code>
+
+                <p>
+                    Returns the complex eigenvalues of a quadratic matrix (a list of complex instances). Mode can be set to <code class="inline">mode=float</code>
+                    or <code class="inline">mode="real"</code> to receive only the real eigenvalues (a list of float intances). 
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">eigenvector(eigenvalue)</code>
+
+                <p>
+                    Returns the eigenvector of a matrix that corresponds with a given eigenvalue. 
                 </p>
             </div>
 

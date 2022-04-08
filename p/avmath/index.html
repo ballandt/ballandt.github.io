@@ -2,11 +2,11 @@
 <html>
     <head>
         <title>Avmath | Ballandt</title>
-        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="avmath-style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
-        <link rel="icon" href="./avmath.svg">
+        <link rel="icon" href="../../media/avmath.svg">
 
     </head>
     <body>
@@ -20,151 +20,93 @@
                 <li><a href="../">Projects</a></li>
             </ul>
         </nav>
-        <img src="./avmath.svg" class="title-picture">
-        <h1 class="title">Avmath math module</h1>
 
-        <p class="block-text">Avmath is a Python module for mathematical purposes.
-            It contains functionalities for simple mathematical
-            usage as sine or logarithm functions and submodules
-            for more advanced applied math in the topics of analysis
-            and linear algebra. The module uses a mathematical syntax.
-            The classes and functions are named in a mathematical
-            manner and the class operations enable a mathematical workflow.
-            Its issue is to calculate as accurate as possible and not firstly
-            the aspect of time. </p>
-            
+        <div id="AvmathSide" class="sidenav">
+            <h2>avmath</h2>
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="./docs/">Documentation</a>
+            <a href="./get-started/">Get started</a>
+            <a href="./dev/">Developments</a>
+        </div>
 
-        <hr>
-        
-        <h2 class="paragraph">Contents</h2>
+        <div id="main">
+            <div class="title">
+                <img src="../../media/avmath.svg" width="8%" align="left">
+                <h1>Avmath</h1>
+            </div>
 
-        <ul class="contents">
-            <li><a href="#features">Features</a></li>
-            <li><a href="./getting-started/">Getting started</a></li>
-            <li><a href="./docs/">Documentation</a></li>  
-            <li><a href="./dev/">Developments</a></li>  
-            <li><a href="https://github.com/ballandt/avmath">GitHub repository</a></li>            
-            <li><a href="https://github.com/ballandt/avmath/releases">Releases</a></li>
-        </ul>
+            <p class="intro">
+                Symbolic math for Python <button>Get started</button>
+            </p>
 
-        <hr>
+            <p class="announce">
+                Avmath 3.2 will be delayed. <a href="./dev/release-plan.html">View release plan.</a>
+            </p>
 
-        <h2 class="paragraph" id="features">Features</h2>
+            <div class="box-container">
+                <a href="./docs/?a=installation">
+                    <div class="box">
+                        <h2>Installation</h2>
+                        <p>
+                            Install the version of avmath that fits your needs on your Python.
+                        </p>
+                    </div>
+                </a>
 
-        <a href="./docs/"><h3 class="feature-topic">Basic features</h3></a>
-        <a href="./docs/?a=fraction"><h3 class="feature-sub">Fractions</h3></a>
+                <a href="./docs/?a=number-objects">
+                    <div class="box">
+                        <h2>Number objects</h2>
+                        <p>
+                            Avmath provides special number objects for exact calculations such as fractions and roots.
+                        </p>
+                    </div>   
+                </a>
 
-        <p class="block-text">
-            Avmath provides a datatype for fractions for the 
-            purpose of easy calculations. It can be used with
-            other number types because it contains methods for
-            mathematical operations with the built-in operators
-            as +, -, * and /. Fractions with integer values can be reduced.
-        </p>
+                <a href="./docs/?a=linear-algebra">
+                    <div class="box">
+                        <h2>Linear algebra</h2>
+                        <p>
+                            Use the avmath algebra features for exact vector and matrix calculations or solutions of
+                            systems of linear equations.
+                        </p>
+                    </div>   
+                </a>
 
-        <a href="./docs/?a=functions"><h3 class="feature-sub">Functions</h3></a>
+                <a href="./docs/?a=calculus">
+                    <div class="box">
+                        <h2>Calculus</h2>
+                        <p>
+                            Work with different types of functions or use the general function feature for any type of
+                            mathematical function.
+                        </p>
+                    </div>   
+                </a>
 
-        <p class="block-text">
-            The module contains various functions for arithmetic
-            usage as the greatest common divisor or the detection
-            of prime numbers. It also gives access to mathematical
-            functions as the sine or cosine or logarithms of a real
-            number.
-        </p>
+                <a href="https://github.com/ballandt/avmath">
+                    <div class="box">
+                        <h2>Open source</h2>
+                        <p>
+                            Follow the development of avmath on GitHub and contribute to it.
+                        </p>
+                    </div>   
+                </a>
+            </div>
 
-        <a href="./docs/?a=constants"><h3 class="feature-sub">Constants</h3></a>
+            <div style="clear: both;"></div>
 
-        <p class="block-text">
-            Avmath enables the usage of mathematical constants as &pi; 
-            or <i>e</i> or a list of all two digit prime numbers.
-        </p>
+            <article>
+                <div id="image">
+                    <img src="../../media/avmath_vscode_demo.jpg" allign="left">
+                </div>
+                <div id="text">
+                    Avmath is a Python library for mathematics. Its main focus is on the symbolic
+                    calculations for which it provides a wide span of objects and operations. Its
+                    interface allows a calculator-like workflow because the algorithms concentrate
+                    on mathematical logic instead of programming paradigms. 
+                </div>
+                
+            </article>
 
-        <a href="./docs/?s=algebra.html"><h3 class="feature-topic">Linear algebra</h3></a>
+        </div>
 
-        <p class="block-text">
-            The linear algebra is an important mathematical domain and has many 
-            usages in programming. The avmath submodule algebra deals with algebraic
-            objects and their relations.
-        </p>
-
-        <a href="./docs/?s=algebra.html&a=tuples"><h3 class="feature-sub">Tuples</h3></a>
-
-        <p class="block-text">
-            Algebraic tuples can be used to store and manipulate number values
-            or serve as point in geometrical constructions.
-        </p>
-
-        <a href="./docs/?s=algebra.html&a=vectors"><h3 class="feature-sub">Vectors</h3></a>
-
-        <p class="block-text">
-            Vectors are useful objects for calculations in mathematics and natural sciences.
-            The avmath algebra vector class provides a wide span of features for vector operations.
-        </p>
-
-        <a href="./docs/?s=algebra.html&a=matrices"><h3 class="feature-sub">Matrices</h3></a>
-
-        <p class="block-text">
-            Avmath matrices contain many important methods for an easy handling of complicated matrix operations.
-            The algorithms can serve for simple matrix addition or multiplication for the calculation of determinants
-            and solve eigenvalue problems.
-        </p>
-
-        <a href="./docs/?s=algebra.html&a=sles"><h3 class="feature-sub">Systems of linear equations</h3></a>
-
-        <p class="block-text">
-            SLEs are a part of many mathematical or engineering problems. The library provides easy-to-use features for
-            the declaration and solution of the systems.
-        </p>
-
-        <a href="./docs/?s=analysis.html"><p3 class="feature-topic">Analysis / Calculus</p3></a>
-
-        <p class="block-text">
-            The field of calculus has wide possibilities of usage in many aspects of programming. Avmath helps with
-            easy usable tools for many calculations.
-        </p>
-
-        <a href="./docs/?s=analysis.html&a=function"><h3 class="feature-sub">Common functions</h3></a>
-
-        <p class="block-text">
-            Any imaginable function <i>f(x)</i> can be implemented in your program using the avmath analysis function.
-            The function terms can be given as strings to give a maximum of flexibility. The class supports combinations
-            of functions finds roots, extrema and can calculate derivatives and certain integrals.
-        </p>
-
-        <a href="./docs/?s=analysis.html&a=polynomial"><h3 class="feature-sub">Polynomial functions</h3></a>
-
-        <p class="block-text">
-            Polynomials are one of the most used function types. Avmath performs addition and multiplication methods finds real
-            and complex roots of polynomials and can calculate extrema. The methods for infinitesimal calculations contain derivative values
-            and functions and certain and incertain integrals.
-        </p>
-
-        <hr>
-        
-        <h2 class="paragraph">Version history</h2>
-
-        <p class="block-text">Avmath 3 introduced the possibility to accurately
-            calculate objects in linear algebra using fractions. Many obsolete
-            parts were deleted. Many bugs of version 2 were closed and new features
-            implemented. Avmath 2 ended the former dependency to the math module.
-            All mathematical problems are now solved independently. There have been
-            changes in function names and parameters because of necessary syntax changes
-            and corrections in names. Also, the implementation of functions was done.
-            The Taylor-functions sometimes lack of speed andaccuracy. Many functions and
-            methods had visible and invisible bugs. Avmath 1 was the first GitHub version
-            of avmath. It had the basic functionalities of the later avmath, but especially advanced
-            matrix and function features were missing.</p>    
-            
-            
-        <p class="block-text">Even though avmath 1 was the first version on GitHub,
-            there existed older versions of avmath - or former: evmath. The last version
-            of evmath can be found on PyPi too. Yet there was no documentation of changes.</p>
-
-        <p class="block-text">The first drafts of avmath are dated on the 22nd of March 2021.
-            <a href="https://github.com/ballandt/avmath/blob/master/CHANGELOG.md">
-                Visit CHANGELOG
-            </a>
-        </p>
-
-    </body>
-</html>

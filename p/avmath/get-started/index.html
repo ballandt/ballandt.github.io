@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Avmath | Ballandt</title>
+        <link rel="stylesheet" href="../avmath-style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+        <link rel="icon" href="../../../media/avmath.svg">
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <h4>Camillo Ballandt</h4>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="../">Projects</a></li>
+            </ul>
+        </nav>
+
+        <div id="AvmathSide" class="sidenav">
+            <h2>avmath</h2>
+            <a href="../">Home</a>
+            <a href="../features">Features</a>
+            <a href="../docs/">Documentation</a>
+            <a href="#">Get started</a>
+            <a href="#get-avmath" class="indent">Installation</a>
+            <a href="#import" class="indent">Import</a>
+            <a href="#features" class="indent">Important features</a>
+            <a href="../dev/">Developments</a>
+        </div>
+
+        <div class="title">
+            <h2>Getting started with avmath</h2>
+        </div>
+        
+        <div class="para-text">
+            <h2 id="get-avmath">Get avmath</h2>
+            <p>
+                Avmath is a registered <a href="https://pypi.org/">PyPi</a> package and can be downloaded using the pip command:
+            </p>
+            <div class="code-block">
+                pip install avmath
+            </div>
+
+            <p>
+                Also it can be downloaded from IDE package managers of e.g. <a href="https://thonny.org">Thonny</a> or
+                <a href="https://jetbrains.com/pycharm">PyCharm</a>.
+            </p>
+
+            <p>
+                At the moment, avmath cannot be installed from a conda channel. It is recommended to use a standard Python
+                environment or use the pip manager of conda.
+            </p>
+        </div>
+
+        <div class="para-text">
+            <h2 id="import">Import the modules</h2>
+            <p>
+                To use the standard avmath tools it is only required to use the <code class="inline">import avmath</code>
+                import statement. If all functionalities are required, it is recommended to import in the following way:
+            </p>
+            <pre><code class="python">import avmath
+from avmath import analysis</code></pre>
+        </div>
+
+        <div class="para-text">
+            <h2 id="features">Important features</h2>
+            <p>
+                The focus of avmath lies on symbolic calculations. For this purpose it provides number types like fractions.
+            </p>
+            <h3>Fractions</h3>
+            <p>
+                The <code class="inline">Fraction</code> type can be imported from the avmath base module.
+            </p>
+            <pre><code class="python">from avmath import Fraction</code></pre>
+            <p>
+                Now the Fraction can be initialised with numerator and denominator.
+            </p>
+            <pre><code class="python">a = Fraction(2, 3)</code></pre>
+        </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

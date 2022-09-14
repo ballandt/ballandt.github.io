@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style2.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <title>ballandt | Fraction finder</title>
+</head>
+<body>
+    <div class="nav">
+		<ul class="nav-links">
+			<li><a href="../../">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="../../math">Math</a></li>
+			<li><a href="../../coding/">Coding</a></li>
+			<li><a href="../../p/">Projects</a></li>
+		</ul>
+	</div>  
+    <main>
+        <h1>Fraction finder</h1>
+        <h2>Introduction</h2>
+        <p>
+            This tutorial shows a simple way to reconstruct
+            a fraction form \(\frac{a}{b}\) from a discrete 
+            rational value (<i>e.g.</i> \(0.142857142...\) ).
+            It follows an intuitive, but sometimes slow algorithm.
+        </p>
+
+        <h2>Algorithm</h2>
+        <p>
+            The algorithm uses two variables \(a\) and \(b\) as
+            as numerator and denominator of the fraction which are
+            altered during the process. In the beginning they are both
+            set to \(1\) giving the fraction \(\frac{a}{b}\) a start value
+            of \(1\). If the discrete value is less than the fraction, value
+            \(b\) is increased which leads to a decreasement of the whole fraction.
+            Else, \(a\) is increased, increasing the whole fraction. The process
+            is repeated untill no difference is detected between the fraction and the
+            discrete value. If the value was rational, the algorithm found the reduced
+            fraction which produces the digital representation. If the value was intended
+            to be irrational (<i>e.g.</i> \(\sqrt{2}\) ) the algorithm returns the first
+            fraction that the machine can not tell apart from the real value.
+        </p>
+
+        <h2>Implementation</h2>
+        <pre><code class="python">def discrete_to_fraction(value):
+    a = 1
+    b = 1
+    while a / b != value:
+        if a / b > value:
+            b += 1
+        else:
+            a += 1
+        </code></pre>
+
+        <p>
+            Hallo
+            ad
+            gfgs
+            asdf
+            asdfas
+        </p>
+
+    </main>  
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</html>

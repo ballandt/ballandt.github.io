@@ -2,58 +2,81 @@
 <html>
     <head>
         <title>Projects | Ballandt</title>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../style2.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
     </head>
     <body>
-        <nav>
-            <div class="logo">
-                <h4>Camillo Ballandt</h4>
-            </div>
+        <div class="nav">
             <ul class="nav-links">
-                <li><a href="../">Home</a></li>
+                <li><a href="../../">Home</a></li>
                 <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
+                <li><a href="../../math">Math</a></li>
+                <li><a href="../../coding/">Coding</a></li>
+                <li><a href="../../p/">Projects</a></li>
             </ul>
-        </nav>
-
-        <br>
-        <br>
-        <br>
-        <br>
-
-        <h1 class="title">Projects</h1>
-
-        <div class="container">
-            <div class="item">
-                <img src="./avmath/avmath.svg" class="project-picture">
-                <h3 class="project-title">Avmath Python library</h3>
-                <p class="project-description">A library for mathematic purposes including features of arithmetics, analysis and linear algebra.</p>
-                <a href="./avmath/">
-                    <button class="project-button">Learn more</button>
-                </a>
-            </div>
-
-            <div class="item">
-                <!-- <img src="../not_available.svg" height="5%" class="project-picture"> -->
-                <h3 class="project-title">Sqlite Terminal</h3>
-                <p class="project-description">A terminal to inspect sqlite databases.</p>
-                <a href="./avmath/">
-                    <button class="project-button">Learn more</button>
-                </a>
-            </div>
-
-            <div class="item">
-                <!-- <img src="../not_available.svg" height="10%" class="project-picture"> -->
-                <h3 class="project-title">Python File Writer</h3>
-                <p class="project-description">A Python editor in the terminal.</p>
-                <a href="./avmath/">
-                    <button class="project-button">Learn more</button>
-                </a>
-            </div>
         </div>
-    <!-- <script src="../script.js"></script> -->
+        <main>
+            <h1 class="title">Projects</h1>
+
+            <div class="container">
+                <div class="container-item">
+                    <div class="container-item-row">
+                        <div class="container-item-column">
+                            <h3 class="container-item-title">Avmath Python library</h3>
+                            <p class="container-item-sub">Python</p>
+                            <p class="container-item-content">A library for mathematic purposes including features of arithmetics, analysis and linear algebra.</p>
+                            <a href="./avmath/">
+                                <button class="container-button">Learn more</button>
+                            </a>
+                        </div>
+                        <div class="container-item-column">
+                            <center>
+                                <img src="../media/avmath.svg" width="40%">
+                            </center>
+                        </div> 
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="container-item">
+                        <div class="container-item-row">
+                            <div class="container-item-column">
+                                <h3 class="container-item-title">PhyKep</h3>
+                                <p class="container-item-sub">Python</p>
+                                <p class="container-item-content">A simulation of the earth's orbit and demonstration of the laws of <span class="sc">Kepler</span>.</p>
+                                <a href="./PhyKep/">
+                                    <button class="container-button">Learn more</button>
+                                </a>
+                            </div>
+                            <div class="container-item-column">
+                                <center>
+                                    <img src="../media/phykep.png" width="40%">
+                                </center>
+                            </div> 
+                        </div>
+                    </div>
+                
+                    <div class="container">
+                        <div class="container-item">
+                            <div class="container-item-row">
+                                <div class="container-item-column">
+                                    <h3 class="container-item-title">Polynomdivision</h3>
+                                    <p class="container-item-sub">Python</p>
+                                    <p class="container-item-content">Polynomial division with way of solution for a portable calculator.</p>
+                                    <a href="./avmath/">
+                                        <button class="container-button">Learn more</button>
+                                    </a>
+                                </div>
+                                <div class="container-item-column">
+                                    <center>
+                                        <img src="../media/polynomdivision.png" width="40%">
+                                    </center>
+                                </div> 
+                            </div>
+                        </div>
+            </div>
+        </main>
     </body>
 </html>

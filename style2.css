@@ -42,6 +42,8 @@ body{
     font-size: 14px;
     color: white;
     font-size: 20px;
+    max-zoom: 1;
+    min-zoom: 1;
 }
 
 .nav-links a:hover{
@@ -50,6 +52,7 @@ body{
 
 .welcome{
     font-size: 48px;
+    margin-top: 10%;
 }
 
 .welcome .bold{
@@ -58,11 +61,14 @@ body{
 }
 
 main{
-    position: fixed;
+    position: absolute;
     margin-top: 5%;
     margin-left: 20%;
     margin-right: 20%;
+    margin-bottom: 5%;
     width: 60%;
+    z-index: -1;
+    padding-bottom: 4%;
 }
 
 h1{
@@ -84,6 +90,10 @@ h2{
 
 p{
     text-align: justify;
+}
+
+.sc{
+    font-variant: small-caps;
 }
 
 .basic-table{
@@ -109,5 +119,96 @@ p{
     border-radius: 5px;
     border: none;
     margin-top: 1%;
-    margin-bottom: 40%;
+    margin-bottom: 5%;
+}
+
+.container{
+    margin-top: 3%;
+}
+
+.container-item{
+    background-color: #eee;
+    align-items: center;
+    border-radius: 10px;
+    background-size: cover;
+    padding: 1rem;
+    margin-bottom: 1%;
+}
+
+.container-item-title{
+    margin-top: 1%;
+    margin-left: 5%;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.container-item-content{
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+.container-item-sub{
+    margin-top: 1%;
+    margin-left: 8%;
+    color: grey;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.container-item-row{
+    display: flex;
+}
+
+.container-item-column{
+    flex: 50%;
+    padding: 5px;
+}
+
+.container-button{
+    padding: 2% 10% 2% 10%;
+    border-radius: 10px;
+    border-style: none;
+    text-align: center;
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    background-color: #e98b39;
+    transition: all 0.5s;
+    width: 300px;
+    height: 50px;
+    margin-top: 5%;
+    margin-left: 5%;
+
+    position: relative;
+}
+
+.container-button:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;  
+    top: 14px;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.container-button:hover{
+    background-color: #d27d32;
+    cursor: pointer;
+    padding-right: 12%;
+}
+
+.container-button:hover:after {
+    opacity: 1;
+    right: 20px;
+}
+
+.list-of-contents ul li{
+    color: #e98b39;
+    margin-bottom: 10px;
+}
+
+.list-of-contents a{
+    text-decoration: none;
+    color: blue;
 }

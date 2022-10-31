@@ -35,7 +35,7 @@
             of the function \(y(x)\) giving
             \begin{align}
             \newcommand\at[2]{\left.#1\right|_{#2}}
-            m \equiv \at{\frac{dy}{dt}}{x=P_x}
+            m \equiv \at{\frac{dy}{dx}}{x=P_x}
             \end{align}
 
             Now reviewing the formula of the linear function \(y\) is given by \(P_y\), \(m\) by the derivative and \(x\)
@@ -54,7 +54,7 @@
             \begin{align}
             \frac{\Delta y}{\Delta x} = \frac{f(x+h)-f(x)}{h}
             \end{align}
-            A good step is normally at about \(h = 10^{-6}\)
+            A good step is normally at about \(h = 10^{-6}\).
         </p>
 
         <h2>Implementation</h2>
@@ -78,6 +78,13 @@ def tangent(func, P):
 if __name__ == "__main__":
     print(tangent(f, (2, 2)))
         </code></pre>
+
+        <h2>Conclusion</h2>
+        <p>
+            The presented code is a simple preset demonstrating the algorithm of calculating the tangent 
+            to a given point. Its accuracy is mainly influenced by the differentiation function. In this
+            example it is built as simple as possible leading to a little accuracy.
+        </p>
 
     </main>
 </body>

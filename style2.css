@@ -212,3 +212,41 @@ p{
     text-decoration: none;
     color: blue;
 }
+
+.card-container{
+    margin-top: 2%;
+}
+
+.card{
+    height: 250px;
+    width: 250px;
+    box-shadow: 5px 5px 5px rgb(196, 196, 196);
+    color: rgb(236, 236, 236);
+    padding-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    float: left;
+    margin-right: 3%;
+    margin-bottom: 3%;
+    color: black;
+}
+
+.card:hover{
+    border-bottom: 5px solid #e98b39;
+    border-radius: 2px;
+}
+
+.card h2{
+    color: #e98b39;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 4%;
+}
+
+.box p{
+    margin-top: 20px;
+    text-align: justify;
+}

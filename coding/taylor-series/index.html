@@ -8,7 +8,7 @@
     <title>ballandt | Taylor series</title>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
 </head>
 <body>
     <div class="nav">
@@ -22,45 +22,52 @@
 	</div>
     <main>
         <h1><span class="sc">Taylor</span>-series</h1>
-        <h2>Introduction</h2>
-        <p>
-            The sine of a number is an essential value for many scientific calculations. It cannot simply be
-            obtained for any real value without the <span class="sc">Taylor</span>-series, a theorem by Brook Taylor
-            stating that any \(n\)-times differentiable function \(f\) at \(a\) can be characterised by the polynomial
-            \begin{align}
-            \newcommand\at[2]{\left.#1\right|_{#2}}
-            f(x) = \sum_{n=0}^{\infty} \frac{(x-a)^n}{n!} \cdot \at{\frac{d^ny}{dx^n}}{x=a}
-            \end{align}
-            With this algorithm, many complicated functions can be simplified and calculated numerically.
-        </p>
-        <h2>Algorithm</h2>
-        <p>
-            This example will show the implementation of a certain function, the sine of a number. The <span class="sc">Taylor</span>-series
-            will be developed from \(a=0\). Firstly, the second term of the summation formula will be regarded. For any even \(n\) the \(n\) derivative of
-            the sine is either \(y=\sin x\) or \(y=-\sin x\). At the point \(a=0\) both of them are equal to zero which means that every even term of the sum
-            can be neglegated. For every odd \(n\) the term is either \(\cos 0 = 1\) or \(-\cos 0 = -1\), indicating that the odd terms are alternating.
-            The first term can be simplified because \(a\) can be neglegated. This gives the specified <span class="sc">Taylor</span>-expansion of the sine of a number
-            \begin{align}
-            \sin x = \frac{x}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} \pm \cdots \pm \frac{x^n}{n!} = \sum_{k=0}^{\infty} (-1)^{k} \frac{x^{2k+1}}{(2k+1)!} 
-            \end{align}
-            Analysing this formula it can be seen that it converges rapidly for small \(x\) values because in this case the factorials in the denominator increase
-            much faster than the exponentials in the numerator. For the sine function this instant can be used because the sine function is periodical in the form that
-            \(\sin x = \sin(x \mod 2\pi)\). Using this period greater values can be avoided.
-        </p>
+        <div class="paragraph">
+            <h2>Introduction</h2>
+            <p>
+                The sine of a number is an essential value for many scientific calculations. It cannot simply be
+                obtained for any real value without the <span class="sc">Taylor</span>-series, a theorem by Brook Taylor
+                stating that any \(n\)-times differentiable function \(f\) at \(a\) can be characterised by the polynomial
+                \begin{align}
+                \newcommand\at[2]{\left.#1\right|_{#2}}
+                f(x) = \sum_{n=0}^{\infty} \frac{(x-a)^n}{n!} \cdot \at{\frac{d^ny}{dx^n}}{x=a}
+                \end{align}
+                With this algorithm, many complicated functions can be simplified and calculated numerically.
+            </p>
+        </div>
+        <div class="paragraph">
+            <h2>Algorithm</h2>
+            <p>
+                This example will show the implementation of a certain function, the sine of a number. The <span class="sc">Taylor</span>-series
+                will be developed from \(a=0\). Firstly, the second term of the summation formula will be regarded. For any even \(n\) the \(n\) derivative of
+                the sine is either \(y=\sin x\) or \(y=-\sin x\). At the point \(a=0\) both of them are equal to zero which means that every even term of the sum
+                can be neglegated. For every odd \(n\) the term is either \(\cos 0 = 1\) or \(-\cos 0 = -1\), indicating that the odd terms are alternating.
+                The first term can be simplified because \(a\) can be neglegated. This gives the specified <span class="sc">Taylor</span>-expansion of the sine of a number
+                \begin{align}
+                \sin x = \frac{x}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} \pm \cdots \pm \frac{x^n}{n!} = \sum_{k=0}^{\infty} (-1)^{k} \frac{x^{2k+1}}{(2k+1)!} 
+                \end{align}
+                Analysing this formula it can be seen that it converges rapidly for small \(x\) values because in this case the factorials in the denominator increase
+                much faster than the exponentials in the numerator. For the sine function this instant can be used because the sine function is periodical in the form that
+                \(\sin x = \sin(x \mod 2\pi)\). Using this period greater values can be avoided.
+            </p>
+        </div>
+        <div class="paragraph">
+            <h2>Implementation</h2>
 
-        <h2>Implementation</h2>
+            <pre><code class="python">import math.pi
+    def sin(x):
+        x %= 2 * math.pi
+        sine = x
+        k = 1
+        while
+            </code></pre>
+        </div>
 
-        <pre><code class="python">import math.pi
-def sin(x):
-    x %= 2 * math.pi
-    sine = x
-    k = 1
-    while
-        </code></pre>
-
-        <h2>Conclusion</h2>
-        <p>
-        </p>
+        <div class="paragraph">
+            <h2>Conclusion</h2>
+            <p>
+            </p>
+        </div>
 
     </main>
 </body>

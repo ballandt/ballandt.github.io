@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../style2.css">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
     <title>ballandt | Fraction finder</title>
 </head>
 <body>
@@ -22,32 +22,37 @@
 	</div>  
     <main>
         <h1>Fraction finder</h1>
-        <h2>Introduction</h2>
-        <p>
-            This tutorial shows a simple way to reconstruct
-            a fraction form \(\frac{a}{b}\) from a discrete 
-            rational value (<i>e.g.</i> \(0.142857142...\) ).
-            It follows an intuitive, but sometimes slow algorithm.
-        </p>
+        <div class="paragraph">
+            <h2>Introduction</h2>
+            <p>
+                This tutorial shows a simple way to reconstruct
+                a fraction form \(\frac{a}{b}\) from a discrete 
+                rational value (<i>e.g.</i> \(0.142857142...\) ).
+                It follows an intuitive, but sometimes slow algorithm.
+            </p>
+        </div>
 
-        <h2>Algorithm</h2>
-        <p>
-            The algorithm uses two variables \(a\) and \(b\) as
-            numerator and denominator of the fraction which are
-            altered during the process. In the beginning they are both
-            set to \(1\) giving the fraction \(\frac{a}{b}\) a start value
-            of \(1\). If the discrete value is less than the fraction, value
-            \(b\) is increased which leads to a decreasement of the whole fraction.
-            Else, \(a\) is increased, increasing the whole fraction. The process
-            is repeated untill no difference is detected between the fraction and the
-            discrete value. If the value was rational, the algorithm found the reduced
-            fraction which produces the digital representation. If the value was intended
-            to be irrational (<i>e.g.</i> \(\sqrt{2}\) ) the algorithm returns the first
-            fraction that the machine can not tell apart from the real value.
-        </p>
+        <div class="paragraph">
+            <h2>Algorithm</h2>
+            <p>
+                The algorithm uses two variables \(a\) and \(b\) as
+                numerator and denominator of the fraction which are
+                altered during the process. In the beginning they are both
+                set to \(1\) giving the fraction \(\frac{a}{b}\) a start value
+                of \(1\). If the discrete value is less than the fraction, value
+                \(b\) is increased which leads to a decreasement of the whole fraction.
+                Else, \(a\) is increased, increasing the whole fraction. The process
+                is repeated untill no difference is detected between the fraction and the
+                discrete value. If the value was rational, the algorithm found the reduced
+                fraction which produces the digital representation. If the value was intended
+                to be irrational (<i>e.g.</i> \(\sqrt{2}\) ) the algorithm returns the first
+                fraction that the machine can not tell apart from the real value.
+            </p>
+        </div>
 
-        <h2>Implementation</h2>
-        <pre><code class="python">def discrete_to_fraction(value):
+        <div class="paragraph">
+            <h2>Implementation</h2>
+            <pre><code class="python">def discrete_to_fraction(value):
     a = 1
     b = 1
     while a / b != value:
@@ -55,14 +60,17 @@
             b += 1
         else:
             a += 1
-    return a, b</code></pre>
+        return a, b</code></pre>
+        </div>
 
-    <h2>Conclusion</h2>
-    <p>
-        The given algorithm is a simple and precise way to determine the numerator and
-        denominator of a given discrete fraction. The weakness of the algorithm is that
-        it takes it \(m+n\) tries to guess a fully reduced fraction \(\frac{m}{n}\).
-    </p>
+        <div class="paragraph">
+            <h2>Conclusion</h2>
+            <p>
+                The given algorithm is a simple and precise way to determine the numerator and
+                denominator of a given discrete fraction. The weakness of the algorithm is that
+                it takes it \(m+n\) tries to guess a fully reduced fraction \(\frac{m}{n}\).
+            </p>
+        </div>
 
     </main>  
 </body>

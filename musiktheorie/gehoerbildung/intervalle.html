@@ -1,0 +1,78 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <title>Intervalle</title>
+</head>
+<body>
+    <std-head></std-head>
+    <script src="/hf.js"></script>
+    <theorie-nav></theorie-nav>
+    <div class="musiktheorie-main">
+        <h1>Intervalle hören</h1>
+
+        <h2>Intervalle aufwärts</h2>
+        <center>
+            <button id="int_a_button" onclick="int_a_gen();">
+                Neues Intervall aufrufen
+            </button>
+        </center>
+        <center>
+            <audio id="int_a_audio" controls autoplay>
+                <source src="" type="audio/mpeg">
+            </audio>
+        </center>
+            
+        <center>
+            <button id="int_a_button" onclick="int_a_aufloesen();">
+                Auflösen
+            </button>
+            <p id="int_a_aufloesen" style="visibility: hidden;">Placeholder</p>
+        </center>
+        <hr>
+
+<script>
+    function doFunction() {
+        alert("Hallo");
+    }
+
+    function int_a_gen() {
+        nameArray = ["reine Prime", "kleine Sekunde", "große Sekunde", "kleine Terz", "große Terz", "reine Quarte", "übermäßige Quarte/verminderte Quinte", "reine Quinte", "kleine Sexte", "große Sexte", "kleine Septime", "große Septime", "reine Oktave"];
+        fileArray = ["./media/int_r1.mp3", "./media/int_k2_a.mp3", "./media/int_g2_a.mp3", "./media/int_k3_a.mp3", "./media/int_g3_a.mp3", "./media/int_r4_a.mp3", "./media/int_tr_a.mp3", "./media/int_r5_a.mp3", "./media/int_k6_a.mp3", "./media/int_g6_a.mp3", "./media/int_k7_a.mp3", "./media/int_g7_a.mp3", "./media/int_r8_a.mp3"]
+        var num = Math.floor(Math.random() * fileArray.length);
+        var l = document.getElementById("int_a_aufloesen");
+        l.innerText = nameArray[num];
+        l.style.visibility = "hidden";
+        var x = document.getElementById("int_a_audio");
+        x.src = fileArray[num];
+        
+        var audio = document.getElementById("int_a_audio");
+        audio.volume = 0.2;
+        audio.autoplay = true;
+        audio.load();
+    }
+
+    function int_a_aufloesen() {
+        var l = document.getElementById("int_a_aufloesen");
+        l.style.visibility = "visible";
+    }
+
+    function myFunction() {
+        fileArray = ["file1.mp3","file2.mp3"];
+        var num = Math.floor(Math.random() * fileArray.length);
+        var x = document.getElementById("music");
+        x.src = fileArray[num]; 
+
+        var audio = document.getElementById("music");
+        audio.volume = 0.2;
+        audio.autoplay = true;
+        audio.load();
+    }
+
+    //myFunction()
+
+    </script>
+              
+    </div>
+    <std-foot></std-foot>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <title>Square root regression</title>
+</head>
+<body>
+    <std-head></std-head>
+    <script src="/hf.js"></script>  
+    <div class="std-main">
+        <h1>Square root regression</h1>
+            <h2>Introduction</h2>
+            <p>
+                There are \(n\) points \(P_i(x_i,y_i)\) with \(i=1:n\) given. We are now searching the parameter
+                \(a\) for that the function
+                \begin{align}
+                f(x_i) = a\cdot \sqrt{x_i}
+                \end{align}
+                of which the graph correlates best with the points. The search for this parameter is
+                an equivalent problem with the minimization of the corresponding error function
+                \begin{align}
+                E(f) = \sum_{i=1}^n (y_i - f(x_i))^2
+                \end{align}
+            </p>
+            <h2>Algorithm</h2>
+            <p>
+                To find the minimum of the error function the critical point of \(E(f(a))\) so \(E(a)\) is isolated.
+                Because this error function is a sum of quadratic functions (in respect to \(a\)) with a positive quadratic coefficient,
+                this critical point must be a minimum.
+                \begin{align}
+                \frac{\partial E(f)}{\partial a} = -2 \sum_{i=1}^n \sqrt{x_i} \cdot (y_i - a\sqrt{x_i})
+                \end{align}
+                To find the root of the derivative, it is set to zero
+                \begin{align}
+                0 &\overset{!}{=}  -2 \sum_{i=1}^n \sqrt{x_i} \cdot (y_i - a\sqrt{x_i}) \\
+                &= -2 \sum_{i=1}^n (y_i \sqrt{x_i} - a\cdot x_i)\\
+                &= -2 \left( \sum_{i=1}^n y_i \sqrt{x_i} - a \sum_{i=1}^n\cdot x_i \right)
+                \end{align}
+                Now, it is possible to abstract \(a\) from the term
+                \begin{align}
+    -2 \sum_{i=1}^n y_i \sqrt{x_i} &= -2a \sum_{i=1}^n x_i\\
+    \sum_{i=1}^n y_i \sqrt{x_i} \cdot \left( \sum_{i=1}^n x_i \right)^{-1} &= a
+                \end{align}
+            </p>
+            <h2>Implementation</h2>
+            <pre><code class="python">from math import sqrt, fsum
+
+# Points P_i (example)
+p = [
+    [0, 0.0],
+    [1, 1.2],
+    [2, 1.9],
+    [3, 2.3],
+    [4, 2.9]
+]
+
+def sqrt_reg(points):
+    a = fsum([ele[1] * sqrt(ele[0]) for ele in points]) / fsum(ele[0] for ele in points)
+    return a
+
+if __name__ == "__main__":
+    print(sqrt_reg(p))</code></pre>
+            <h2>Conclusion</h2>
+            <p>
+                This example shows a linear regression with only one free parameter and is therefore relatively simple to solve.
+                But especially in physics it is a relevant for example in the processing of experimental data concerning oscillation
+                in dependence of the mass to find the spring constant by using
+                \begin{align}
+                T &= 2\pi \cdot \sqrt{\frac{m}{D}}\\
+                T(m) &= c \sqrt{m} \quad c = 2\pi \cdot \sqrt{\frac{1}{D}}
+                \end{align}
+                where \(c\) is searched giving a practical example of this regression.
+            </p>
+        </div>  
+    
+</body>
+<std-foot></std-foot>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</html>

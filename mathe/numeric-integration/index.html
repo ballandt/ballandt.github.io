@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>ballandt | Numeric integration</title>
+</head>
+<body>
+    <std-head></std-head>
+    <script src="/hf.js"></script>
+    <div class="std-main">
+        <p class="warning-disclaimer">This page is not finished yet.</p>
+        <h1>Numeric integration</h1>
+        <h2>Introduction</h2>
+        <p>
+            An integration is a summation of an infinite amount of
+            infinitively small elements. It can be visualised as the
+            area under the graph of the integrated function which is
+            also a prominent field of its application. The analytical
+            integration is often very complicated or not even possible,
+            but following the definition
+            \begin{align}
+            \int_a^b f(x)dx := \sum_{i=0}^\infty f(x_i) \Delta i && \text{for } a \le x_i \le b
+            \end{align}
+            it is possible to numerically
+            approximate the finite integral using finite steps instead of
+            infinitively small ones. 
+        </p>
+        <h2>Algorithms</h2>
+        <p>
+            For the understanding of the following algorithms it is useful
+            to visualise the integral as the area under a curve. In this case
+            it is possible to approximately describe the area as a set of quadrilaterals
+            slightly intersecting the curve.
+        </p>
+
+    </div>  
+    <std-foot></std-foot>
+</body>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</html>

@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Avmath Documentation | Ballandt</title>
+        <link rel="stylesheet" href="../../avmath-style2.css">
+    </head>
+    <body class="docs">
+        <nav>
+            <div class="logo">
+                <h4>Camillo Ballandt</h4>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../../../../">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="../../../../p/">Projects</a></li>
+            </ul>
+        </nav>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="path">
+            <p>
+                <a href="../../../../p/">Projects</a>
+                /
+                <a href="../../../avmath/">Avmath</a>
+                / 
+                <a href="./">Documentation</a>
+                / algebra
+                <select name="docs-version" id="version-select" onChange="selectVersion('algebra.html')">
+                    <option value="4.0">4.0</option>
+                    <option value="3.2">dev 3.2</option>
+                    <option value="3.1" selected="selected">3.1</option>
+                    <option value="3.0">3.0</option>
+                    <option value="2.0">2.0</option>
+                    <option value="1.2">1.2</option>
+                </select>
+            </p>
+        </div>
+
+        <h1 class="title">Avmath 3.1 documentation - submodule algebra</h1>
+
+        <p>
+            The algebra submodule contains objects and methods for calculations with
+            linear algebra. It is separated from the root features and must be imported
+            using
+        </p>
+        <pre class="code-line">
+<span class="key">from</span> avmath <span class="key">import</span> algebra</pre>
+        <hr>
+
+        <div class="content-table">
+            <h2>Contents</h2>
+            <ul>
+                <li>
+                    <a href="#tuples">Tuples</a>
+                    <ul>
+                        <li><a href="#tup-att">Attributes</a></li>
+                        <li>
+                            <a href="#tup-met">Methods</a>
+                            <ul>
+                                <li><a href="#tup-met-pro">Processing methods</a></li>
+                                <li><a href="#tup-met-mat">Mathematical methods</a></li>
+                                <li><a href="#tup-met-sta">Static methods</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#vectors">Vectors</a>
+                    <ul>
+                        <li><a href="#vec-met">Methods</a></li>
+                        <ul>
+                            <li><a href="#vec-met-pro">Processing methods</a></li>
+                            <li><a href="#vec-met-mat">Mathematical methods</a></li>
+                            <li><a href="#vec-met-sta">Static methods</a></li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#structures">Structures</a>
+                    <ul>
+                        <li><a href="#stru-att">Attributes</a></li>
+                        <li><a href="#stru-met">Methods</a></li>
+                        <ul>
+                            <li><a href="#stru-met-pro">Processing methods</a></li>
+                            <li><a href="#stru-met-mat">Mathematical methods</a></li>
+                            <li><a href="#stru-met-sta">Static methods</a></li>
+                        </ul>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#matrices">Matrices</a>
+                    <ul>
+                        <li>
+                            <a href="#mat-met">Methods</a>
+                            <ul>
+                                <li><a href="#mat-met-pro">Processing methods</a></li>
+                                <li><a href="#mat-met-mat">Mathematical methods</a></li>
+                                <li><a href="#mat-met-sta">Static methods</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#sles">Systems of linear equations</a>
+                    <ul>
+                        <li><a href="#sle-att">Attributes</a></li>
+                        <li>
+                            <a href="#sle-met">Methods</a>
+                            <ul>
+                                <li><a href="#sle-met-pro">Processing methods</a></li>
+                                <li><a href="#sle-met-mat">Mathematical methods</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <hr>
+
+        <h2 id="tuples">Tuples</h2>
+
+        <p>
+            In the linear algebra, tuples are an ordered set of values a<sub>k</sub> with
+            a = (a<sub>0</sub>, a<sub>1</sub>, ..., a<sub>n</sub>) &in; &real;<sup>n</sup>. Avmath algebra provides
+            an own Tuple class to handle algebraic operations.
+        </p>
+
+        <div class="dir-content">
+            <code class="mother">algebra.</code>
+            <code class="child">Tuple</code>
+        </div>
+        <blockquote>
+            <h3 id="tup-att">Attributes</h3>
+            <div class="dir-content">
+                <code class="mother">Tuple.</code>
+                <code class="child">_value</code>
+                <p>
+                    List that stores the values a<sub>k</sub> of the Tuple.
+                </p>
+            </div>
+        
+        <h3 id="tup-met">Methods</h3>
+        <h4 id="tup-met-pro">Processing methods</h4>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__init__(*args)</code>
+            <p>
+                Initialises the Tuple. Parameters can either be number values or
+                a list.
+            </p>
+            <pre class="code-line">
+<span class="key">from</span> avmath <span class="key">import</span> algebra
+
+<span class="comment"># Initialisation via numbers</span>
+a = algebra.Tuple(<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>)
+
+<span class="comment"># Initialisation via iterable object</span>
+b_list = [<span class="number">4</span>, <span class="number">3</span>, <span class="number">4.9</span>]
+b = algebra.Tuple(b)</pre>
+            <p>
+                Note: The Tuples a and b will be used in various examples
+                in which this code snippet is used.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__iter__()</code>
+            <p>
+                Returns generator to convert Tuple to another iterable
+                object.  Enables the usage of <code class="inline">iter</code> function
+                and type conversion to iterable datatypes and the usage in for-loops.
+            </p>
+            <pre class="code-line">
+                
+<span class="comment"># Usage of iter function</span>
+a_iterable = <span class="builtin">iter</span>(a)
+
+<span class="comment"># Usage of list function</span>
+a_list = <span class="builtin">list</span>(a)
+
+<span class="comment"># Usage of for loop</span>
+<span class="key">for</span> ele <span class="key">in</span> a:
+    <span class="builtin">print</span>(ele)
+</pre>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__getitem__(item)</code>
+            <p>
+                Returns the <code class="inline">item</code>th item
+                of a Tuple. Enables brackets notation:
+
+                <pre class="code-line">
+a_k = a[<span class="number">1</span>]</pre>
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__repr__()</code>
+            <p>
+                Method that returns string representation of the Tuple.
+                String representation corresponds with the built-in tuple.
+                This method enables the usage of <code class="inline">repr</code>
+                <code class="inline">str</code> and <code class="inline">print</code> functions.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__len__()</code>
+            <p>
+                Returns the length of a Tuple (equal with its dimension).
+                Enables the usage of the built-in <code class="inline">len</code> function.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">dim()</code>
+            <p>
+                See <code class="inline">Tuple.__len__()</code>
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">append(value)</code>
+            <p>
+                Returns a Tuple with the appended value. The initial Tuple
+                is not changed.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">no_fractions()</code>
+            <p>
+                Converts all Fraction members to floats.
+            </p>
+        </div>
+
+        <h4 id="tup-met-mat">Mathematical methods</h4>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__eq__(other)</code>
+            <p>
+                Method for the <code class="inline">==</code> operation.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__neg__</code>
+            <p>
+                Returns negative Tuple. All elements are multiplied
+                with -1.
+                Enables the usage of
+            </p>
+            <pre class="code-line">
+negative_a = -a</pre>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__add__(other)</code>
+            <p>
+                Method for addition with <code class="inline">+</code> operator.
+                Adds two Tuples c = a + b with c = (a<sub>0</sub> + b<sub>0</sub>, a<sub>1</sub> + b<sub>1</sub>, ..., a<sub>n</sub> + b<sub>n</sub>)
+                and a, b, c &in; &real;;<sup>n</sup>.
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__sub__(other)</code>
+            <p>
+                Method for subtraction with <code class="inline">-</code> operator.
+                Subtracts two Tuples a - b &#8788; a + (-b).
+            </p>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__mul__(other)</code>
+            <p>
+                Method for multiplication with <code class="inline">*</code> operator.
+                Calculates scalar multiplication of t &centerdot; a &#8788; (t &centerdot; a<sub>0</sub>, t &centerdot; a<sub>1</sub>, ..., t &centerdot; a<sub>n</sub>)
+                with t &in; &real;, a &in; &real;<sup>n</sup>.
+                Order for operation is not important.
+            </p>
+            <pre class="code-line">
+t = <span class="number">2</span>
+t_a = t * a 
+a_t = a * t 
+t_a == a_t <span class="comment"># True</span></pre>
+        </div>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">__truediv__(other)</code>
+            <p>
+                Method for division with <code class="inline">/</code> operator.
+                Scalar multiplication with 1 / <code class="inline">other</code>. 
+                Members a<sub>k</sub> become Fractions to avoid inaccuracies due to
+                float division.
+            </p>
+        </div>
+
+        <h4 id="tup-met-sta">Static methods</h4>
+
+        <div class="dir-content">
+            <code class="mother">Tuple.</code>
+            <code class="child">dim_check(*args)</code>
+            <p>
+                Checks if given Tuple arguments have the same amount of
+                dimensions. In this case returns <code class="inline">True</code>, 
+                else <code class="inline">False</code>.
+            </p>
+        </div>
+        </blockquote>
+
+        <hr>
+
+        <h2 id="vectors">Vectors</h2>
+
+        <p>
+            The linear algebra does not see any difference between a tuple and 
+            a vector. Yet, in geometrical constructions it can be helpful to distinguish
+            between points and sides of a figure. In avmath, the Tuple is generally seen 
+            as a point and a Vector as a side. The vector class provides also some additional
+            typical vector features.
+        </p>
+
+        <div class="dir-content">
+            <code class="mother">algebra.</code>
+            <code class="child">Vector</code>
+        </div>
+
+        <p>
+            The Vector class inherites all methods from the Tuple class.
+            If there are no methods to overwrite them, they can be used.
+        </p>
+
+        <blockquote>
+
+            <h3 id="vec-met">Methods</h3>
+            <h4 id="vec-met-pro">Processing methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__init__(*args [, begin, end])</code>
+                <p>
+                    Initialisation of a Vector object. Takes either number arguments, vectorizes a 
+                    Tuple or is initialised by giving a point of beginning and end as tuples. In this case,
+                    the specific begin and end values are not saved.
+                </p>
+                <pre class="code-line">
+<span class="key">from</span> avmath <span class="key">import</span> algebra
+
+<span class="comment"># Initialisation via numbers</span>
+u = algebra.Vector(<span class="number">1</span>, <span class="number">2</span>, <span class="number">4</span>)
+
+<span class="comment"># Initialisation via vectorisation</span>
+a = algebra.Tuple(<span class="number">2</span>, <span class="number">5</span>, <span class="number">2</span>)
+v = algebra.Vector(a)
+
+<span class="comment"># Initialisation with begin and end</span>
+b = algebra.Tuple(<span class="number">-1</span>, <span class="number">2</span>, <span class="number">0</span>)
+c = algebra.Tuple(<span class="number">4</span>, <span class="number">5</span>, <span class="number">8</span>)
+w = algebra.Vector(begin=b, end=c)
+                </pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">leading_zeros()</code>
+
+                <p>
+                    Returns the number of the leading zeros of a vector. Important for
+                    matrix Gauss-methods.
+                </p>
+                <pre class="code-line">
+u = algebra.Vector(<span class="number">0</span>, <span class="number">2</span>, <span class="number">4</span>)
+v = algebra.Vector(<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>)
+w = algebra.Vector(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>)
+
+leading_zeros = u.leading_zeros() <span class="comment"># 1</span>
+leading_zeros = v.leading_zeros() <span class="comment"># 0</span>
+leading_zeros = w.leading_zeros() <span class="comment"># 3</span></pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">no_fractions()</code>
+
+                <p>
+                    Returns vector with no <code class="inline">Fraction</code> members.
+                </p>
+            </div>
+
+            <h4 id="vec-met-mat">Mathematical methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__abs__()</code>
+
+                <p>
+                    Returns the absolute (pythagorean length) of
+                    a vector. The built-in function <code class="inline">abs</code>
+                    can be used.
+                </p>
+                <pre class="code-line">
+u_abs = <span class="builtin">abs</span>(u)</pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__add__(other)</code>
+
+                <p>
+                    Method for vector addition. Mathematically identic 
+                    with tuple addition. <code class="inline">+</code>
+                    operator can be used.
+                </p>
+                <pre class="code-line">
+sum = u + v</pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__sub__(other)</code>
+
+                <p>
+                    Subtraction method for vectors. Uses a - b = a + (-b).
+                    <code class="inline">-</code> operator can be used.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__mul__(other)</code>
+
+                <p>
+                    <ul>
+                        <li>
+                            If <code class="inline">other</code> is a number,
+                            calculates the scalar multiplication, see <code class="inline">Tuple.__mul__</code>
+                        </li>
+                        <li>
+                            If <code class="inline">other</code> is another vector, calculates the scalar product
+                            a<sub>0</sub> &centerdot;  b<sub>0</sub> + a<sub>1</sub> &centerdot;  b<sub>1</sub> + ... + a<sub>n</sub> &centerdot;  b<sub>n</sub>
+                        </li>
+                    </ul>
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__truediv__(other)</code>
+
+                <p>
+                    Scalar multiplication with 1/<code class="inline">other</code>. 
+                    Enables usage of Fractions. <code class="inline">/</code> sign can be used.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">__pow__(power)</code>
+
+                <p>
+                    Power method for vectors. Takes only integers [0, &infin;) &in; &integers; as arguments.
+                    <code class="inline">power</code>=0 returns specific unit vector
+                    All other powers return a <i>n</i> times vector.
+                </p>
+                <pre class="code-line">
+e = u ** 0 <span class="comment"># unit vector</span>
+u_squared = u ** 2 <span class="comment"># u * u (a scalar value)</span>
+u_cube = u ** 3
+<span class="comment"># u * u * u (a vector value - scalar (u * u)</span>
+<span class="comment"># multiplied with a vector gives a vector.</span>
+                </pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">cross(other)</code>
+
+                <p>
+                    Returns the cross product or vector product <i>v&#x20d7;</i> &times; <i>w&#x20d7;</i>. Can only be used
+                    for vectors <i>v&#x20d7;</i>, <i>w&#x20d7;</i> &in; &real;<sup>3</sup>. 
+                </p>
+                <pre class="code-line">
+cross_vector = v.cross(w)</pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">unit()</code>
+
+                <p>
+                    Returns a vector with same direction, but absolute length 1.
+                </p>
+            </div>
+
+            <h4 id="vec-met-sta">Static methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">spat(u, v, w)</code>
+
+                <p>
+                    Method for spat product of three vectors (<i>u&#x20d7;</i> &times; <i>v&#x20d7;</i> ) &centerdot; <i>w&#x20d7;</i>.
+                </p>
+                <pre class="code-line">
+spat = algebra.Vector.spat(u, v, w)</pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Vector.</code>
+                <code class="child">angle(u, v)</code>
+
+                <p>
+                    Returns the angle between two vectors in radians.
+                </p>
+                <pre class="code-line">
+angle = algebra.Vector.angle(u, v)</pre>
+            </div>
+        </blockquote>
+
+        <hr>
+
+        <h2 id="structures">Structures</h2>
+
+        <p>
+            Structures give the possibility to calculate with geometrical
+            objects giving their edge points.
+        </p>
+
+        <div class="dir-content">
+            <code class="mother">algebra.</code>
+            <code class="child">Structure</code>
+        </div>
+
+        <blockquote>
+            <h3 id="stru-att">Attributes</h3>
+
+            <div class="dir-content">
+                <code class="mother">Structure.</code>
+                <code class="child">points</code>
+
+                <p>
+                    A list of the edge points of the structure.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Structure.</code>
+                <code class="child">vectors</code>
+
+                <p>
+                    A list of the vectors linking the points. The first vector
+                    links the first and the second point, the last vector the last
+                    point and the first point.
+                </p>
+            </div>
+
+            <h3 id="stru-met">Methods</h3>
+            <h4 id="stru-met-pro">Processing methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Structure.</code>
+                <code class="child">__init__(*args)</code>
+
+                <p>
+                    Initialisation of the structure. Takes <code class="inline">Tuple</code>
+                    values as arguments representing the edge points.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Structure.</code>
+                <code class="child">flat()</code>
+
+                <p>
+                    Returns <code class="inline">True</code> if an area exists
+                    in which all points lie. The method is not very accurate because
+                    the algorithm uses square roots and float divisions.
+                </p>
+            </div>
+
+            <h4 id="stru-met-mat">Mathematical methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Structure.</code>
+                <code class="child">circumference()</code>
+
+                <p>
+                    Returns the circumference of the structure.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Structure.</code>
+                <code class="child">area([opt])</code>
+
+                <p>
+                    Returns the area of the structure. <code class="inline">opt</code> can
+                    be set to <code class="inline">'flat'</code> to throw 
+                    <code class="inline">GeometricalError</code> if the area is not flat. Is not
+                    recommended because of the inaccurate flat-algorithm. With no option specified
+                    <code class="inline">GeometricalWarning</code> is caused if the area is not flat.
+                </p>
+            </div>
+
+            <h4 id="stru-met-sta">Static methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Structure.</code>
+                <code class="child">triangulate</code>
+
+                <p>
+                    Calculates the area between three Tuple points.
+                </p>
+            </div>
+
+        </blockquote>
+
+        <h2 id="matrices">Matrices</h2>
+
+        <p>
+            Matrices are tuples of a vector space &real;<sup>m&times;n</sup> or so called two
+            dimensional lists. They have a vast importance in many scientific operations. The
+            avmath algebra matrices provide advanced mathematical matrix features. The class inherites
+            from the Tuple class.
+        </p>
+
+        <div class="dir-content">
+            <code class="mother">algebra.</code>
+            <code class="child">Matrix</code>
+        </div>
+
+        <blockquote>
+
+            <h3 id="mat-met">Methods</h3>
+            <h4 id="mat-met-pro">Processing methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__init__(*args)</code>
+
+                <p>
+                    Initialises the matrix. Input types can be list or <code class="inline">algebra.Vector</code>.
+                </p>
+                <pre class="code-line">
+<span class="key">from</span> avmath <span class="key">import</span> algebra
+
+<span class="comment"># Initialisation via lists (normal)</span>
+A = algebra.Matrix([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>], [<span class="number">5</span>, <span class="number">4</span>, <span class="number">2</span>])
+
+<span class="comment"># Initialisation via lists (better view)</span>
+B = algebra.Matrix([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],
+                   [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>],
+                   [<span class="number">5</span>, <span class="number">4</span>, <span class="number">2</span>])
+
+<span class="comment"># Initialisation via Vector</span>
+u = algebra.Vector(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)
+C = algebra.Matrix(u)       <span class="comment"># Vector becomes column vector</span>
+D = algebra.Matrix(<span class="builtin">list</span>(u)) <span class="comment"># Vector becomes row vector</span></pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__repr__()</code>
+
+                <p>
+                    Returns a string representation of the matrix.
+                </p>
+                <pre class="code-line">
+A = algebra.Matrix([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],
+                   [<span class="number">4</span>, <span class="number">2</span>, <span class="number">5</span>],
+                   [<span class="number">5</span>, <span class="number">4</span>, <span class="number">2</span>])</pre>
+
+                <p>gives the output:</p>
+
+                <pre class="code-line">
+┌ 1 2 3 ┐
+| 4 2 5 |
+└ 5 4 2 ┘</pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">size([opt])</code>
+
+                <p>
+                    Returns a list containing the amount of rows and columns of a matrix. With no option specified,
+                    returns [n<sub>rows</sub>, n<sub>columns</sub>]. With
+                    <code class="inline">opt="xy"</code> the order is inverse (refering to the x-y coordinate system).
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">dim()</code>
+
+                <p>
+                    Returns the dimension of a matrix. Returns m &centerdot; n.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">index(element)</code>
+
+                <p>
+                    Returns the index of an element in the matrix in [m, n] notation. If there are multiple 
+                    elements matching the filter, a list with all indices is returned.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">no_fractions()</code>
+
+                <p>
+                    Returns a matrix that does not contain Fraction members.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">column(column_index)</code>
+
+                <p>
+                    Returns the column vector (return type is algebra Vector) of given index (starting with 0).
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">row(row_index)</code>
+
+                <p>
+                    Returns the row vector (return type is algebra Vector) of given index (starting with 0).
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">append([row], [, column])</code>
+
+                <p>
+                    Returns a matrix with appended row and/or column. entered row/column must be an iterable type.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">remove([row_index], [, column_index])</code>
+
+                <p>
+                    Returns a matrix without the column and/or row of the given index (starting from 0).
+                </p>
+            </div>
+
+            <h4 id="mat-met-mat">Mathematical methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__round__([n])</code>
+
+                <p>
+                    Enables usage of built-in <code class="inline">round</code> function.
+                    All elements are rounded to <code class="inline">n</code> digits. If no <code class="inline">n</code> 
+                    specified, all elements are rounded to integers.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__neg__()</code>
+
+                <p>
+                    Returns a negative matrix. All elements are multiplied with -1.
+                    Enables the usage of the <code class="inline">-</code> operator for negations.
+                </p>
+                <pre class="code-line">
+negative_A = -A</pre>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__add__(other)</code>
+
+                <p>
+                    Adds two matrices of the same size C = A + B with C<sub>ij</sub> = A<sub>ij</sub> + B<sub>ij</sub>. 
+                    Enables <code class="inline">+</code> operator. If the matrices do not have the same 
+                    amount of dimensions, <code class="inline">ArgumentError</code> is thrown.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__sub__(other)</code>
+
+                <p>
+                    Reversed matrix addition. Is used by <code class="inline">-</code> operator for subtractions.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__mul__(other)</code>
+
+                <ul>
+                    <li>
+                        <code class="inline">other</code> is a matrix: returns the matrix product of two matrices A &times; B with A &in; &real;<sup>m&times;n</sup> and B &in; &real;<sup>n&times;k</sup>. 
+                        If this condition is not given, raises <code class="inline">MatrixError</code>.
+                </li>
+                <li>
+                    <code class="inline">other</code> is a vector: returns matrix-vector-multiplication. Interpretes vector as a matrix v &in; &real;<sup>n&times;1</sup> (column vector). If the dimensions
+                    do not match, <code class="inline">MatrixError</code> is thrown.
+                </li>
+                <li>
+                    <code class="inline">other</code> is a number: returns scalar multiplied matrix.
+                </li>
+                </ul>  
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__truediv__(other)</code>
+
+                <p>
+                    <code class="inline">/</code> method for matrices. Returns matrix with Fraction members.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__pow__(power)</code>
+
+                <p>
+                    Method for <code class="inline">**</code> operator or <code class="inline">pow()</code> function.
+                    Returns <code class="inline">power</code> times multiplied matrix. Matrix must be quadratic. Power 0
+                    returns identity matrix of the dimension of the operated matrix, power -1 returns inverse matrix.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__abs__()</code>
+
+                <p>
+                    See <code class="inline">Matrix.det()</code>
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">transpose()</code>
+
+                <p>
+                    Returns transposed matrix A<sup>T</sup> that is the inserted matrix, but the <i>n</i>th row becomes th <i>n</i>th column.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">det()</code>
+
+                <p>
+                    Returns the determinant of a quadratic matrix. Calculates with Laplace development.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">cof()</code>
+
+                <p>
+                    Returns cofactor matrix B of a quadratic matrix A. Element b<sub>ij</sub> = Det(A<sub>ij</sub>). Det(A<sub>ij</sub>) is the determinant of the 
+                    matrix a with deleted row i and column j.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">adj()</code>
+
+                <p>
+                    Returns adjunct of a quadratic matrix. Id equal to the transposed cofactor matrix.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">inverse()</code>
+
+                <p>
+                    Returns inverse matrix A<sup>-1</sup> of a quadratic matrix A if possible. Can not be processed if the determinant of A is 0. In this
+                    case raises <code class="inline">ZeroDivisionError</code>.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">ref()</code>
+
+                <p>
+                    Returns row echelon form of a matrix.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">rank()</code>
+
+                <p>
+                    Returns rank of a matrix.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">rref()</code>
+
+                <p>
+                    Returns reduced row echelon form of a matrix.
+                </p>
+            </div>
+
+            <h4 id="mat-met-sta">Static methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">create(m, n)</code>
+
+                <p>
+                    Creates a Matrix of the size m &times; n containing only 0s.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">create_identity(n)</code>
+
+                <p>
+                    Creates an identity matrix with n rows and columns.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">Matrix.</code>
+                <code class="child">__leading_zero_sort(arg_list)</code>
+
+                <p>
+                    Sorts the given matrix value list so that elements are ordered by the numbers of leading zeroes they have.
+                </p>
+            </div>
+
+        </blockquote>
+
+        <h2 id="sles">Systems of linear equations</h2>
+
+        <p>
+            Systems of linear equations can easily be solved with matrix operations.
+            Avmath algebra provides an own SLE class containing features for their solution.
+            Inherites from Matrix.
+        </p>
+
+        <div class="dir-content">
+            <code class="mother">algebra.</code>
+            <code class="child">SLE</code>
+        </div>
+
+        <blockquote>
+            <h3 id="sle-att">Attributes</h3>
+
+            <div class="dir-content">
+                <code class="mother">SLE.</code>
+                <code class="child">A</code>
+
+                <p>
+                    Stores the coefficient matrix.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">SLE.</code>
+                <code class="child">b</code>
+
+                <p>
+                    Stores the result vector.
+                </p>
+            </div>
+
+            <h3 id="sle-met">Methods</h3>
+            <h4 id="sle-met-pro">Processing methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">SLE.</code>
+                <code class="child">__init__(*args)</code>
+
+                <p>
+                    Takes arguments as expanded coefficient matrix.
+                </p>
+                <pre class="code-line">
+<span class="key">from</span> avmath <span class="key">import</span> algebra
+
+a = algebra.SLE([a_11, a_12, a_13, b_1],
+                [a_21, a_22, a_23, b_2],
+                [a_31, a_32, a_33, b_3])</pre>
+                <p>
+                    for the system
+                </p>
+                <div class="sle">
+                    <p>a<sub>11</sub>x<sub>1</sub> + a<sub>12</sub>x<sub>2</sub> + a<sub>13</sub> &centerdot; x<sub>3</sub> = b<sub>1</sub></p>                    
+                    <p>a<sub>21</sub>x<sub>1</sub> + a<sub>22</sub>x<sub>2</sub> + a<sub>23</sub> &centerdot; x<sub>3</sub> = b<sub>2</sub></p>                    
+                    <p>a<sub>31</sub>x<sub>1</sub> + a<sub>32</sub>x<sub>2</sub> + a<sub>33</sub> &centerdot; x<sub>3</sub> = b<sub>3</sub></p>
+                </div>
+            </div>
+
+            <h4 id="sle-met-mat">Mathematical methods</h4>
+
+            <div class="dir-content">
+                <code class="mother">SLE.</code>
+                <code class="child">solve()</code>
+
+                <p>
+                    Returns a vector with the unknown variables. If the system cannot be solved,
+                    throws <code class="inline">ZeroDivisionError</code>.
+                </p>
+            </div>
+
+            <div class="dir-content">
+                <code class="mother">SLE.</code>
+                <code class="child">x(index)</code>
+
+                <p>
+                    Returns the unknown variable of the given index.
+                </p>
+            </div>
+
+        </blockquote>
+
+    </body>
+    <script src="../../script.js"></script>
+</html>

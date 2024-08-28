@@ -1,0 +1,71 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <title>Musiktheorie</title>
+</head>
+<body>
+    <std-head></std-head>
+    <script src="../hf.js"></script>
+    <!-- <div class="nav">
+        <h2>Theoriehilfe</h2>
+        <ul class="nav-links">
+            <li>Punkt 1</li>
+            <li>Punkt 2</li>
+            <li>Punkt 3</li>
+        </ul>
+    </div> -->
+    <!-- <div class="sidenav">
+        <h3>Überschrift</h3>
+        <ul>
+            <li>
+                Hallo
+            </li>
+            <li>
+                Hallo 2
+            </li>
+        </ul>
+        <h3>Gehörbildung</h3>
+        <ul>
+            <li><a href="./gehoerbildung/intervalle.html">Intervalle</a></li>
+            <li><a href="./gehoerbildung/melodiediktat.html">Melodiediktat</a></li>
+        </ul>
+        <h3>Generalbass</h3>
+        <ul>
+            <li><a href="./generalbass/bezifferung.html">Bezifferung</a></li>
+        </ul>
+    </div> -->
+    <theorie-nav></theorie-nav>
+
+    <div class="musiktheorie-main">
+
+        <h1>Musiktheorie</h1>
+
+
+
+            <!-- <img src="testbild.jpg" width="500px"> -->
+            <audio id="music" controls autoplay>
+                <!-- <source src="Wosadnik 515 Sopran allein.mp3" type="audio/mpeg">
+              Your browser does not support the audio element. -->
+              <source src="" type="audio/mpeg">
+            </audio>
+            <script>
+                function myFunction() {
+                   fileArray = ["file1.mp3","file2.mp3"];
+                   var num = Math.floor(Math.random() * fileArray.length);
+                   var x = document.getElementById("music");
+                   x.src = fileArray[num]; 
+            
+                   var audio = document.getElementById("music");
+                   audio.volume = 0.2;
+                   audio.autoplay = true;
+                   audio.load();
+                }
+            
+                myFunction()
+            
+              </script>
+              
+    </div>
+    <std-foot></std-foot>
+</body>
+</html>

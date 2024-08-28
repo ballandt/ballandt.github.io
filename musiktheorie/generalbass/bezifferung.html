@@ -1,0 +1,154 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <title>Bezifferung</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <std-head></std-head>
+    <script src="/hf.js"></script>
+    <theorie-nav></theorie-nav>
+    <!-- <div class="nav">
+        <h2><a href="../" style="text-decoration: none;color: white;">Theoriehilfe</a></h2>
+        <ul class="nav-links">
+            <li>Punkt 1</li>
+            <li>Punkt 2</li>
+            <li>Punkt 3</li>
+        </ul>
+    </div>
+    <div class="sidenav">
+        <h3>Überschrift</h3>
+        <ul>
+            <li>
+                Hallo
+            </li>
+            <li>
+                Hallo 2
+            </li>
+        </ul>
+        <h3>Gehörbildung</h3>
+        <ul>
+            <li><a href="../gehoerbildung/intervalle.html">Intervalle</a></li>
+            <li><a href="../gehoerbildung/melodiediktat.html">Melodiediktat</a></li>
+        </ul>
+        <h3>Generalbass</h3>
+        <ul>
+            <li style="font-weight: bold;">Bezifferung</li>
+        </ul>
+    </div> -->
+    <div class="musiktheorie-main">
+        <h1>Generalbass - Bezifferung</h1>
+
+        <center>
+            <h3>Keine Bezeichnung</h3>
+        </center>
+
+        <center>
+            <img src="./media/keine.png" width="200px">
+        </center>
+
+        <p>
+            Ist der Basston nicht beziffert, wird der leitereigene Dreiklang über dem Basston gebildet (Terz und Quinte).
+        </p>
+
+        <center>
+            <h3>Vorzeichen allein</h3>
+        </center>
+
+        <center>
+            <img src="./media/b.png" width="200px">
+        </center>
+
+        <p>
+            Ein Vorzeichen (&#9837;, &#9838;, &#9839;) gilt für die Terz des Akkordes
+        </p>
+
+        <center>
+            <h3>Sexte</h3>
+        </center>
+        <center>
+            <img src="./media/6.png" width="200px">
+        </center>
+
+        <p>
+            Ist eine 6 beziffert, wird statt der Quinte eine Sexte gespielt.
+        </p>
+
+        <center>
+            <h3>Quarte</h3>
+        </center>
+        <center>
+            <img src="./media/4.png" width="200px">
+        </center>
+
+        <p>
+            Ist eine 4 beziffert, wird statt der Terz die Quarte gespielt.
+        </p>
+
+        <center>
+            <h3>Septakkorde</h3>
+        </center>
+        <center>
+            <img src="./media/7.png" width="420px">
+        </center>
+        <p>
+            Die Bezifferungen \(7\) statt \(\scriptscriptstyle\matrix{7\\5\\3}\) steht für den Septakkord in Grundstellung, \(\scriptstyle\matrix{6\\5\\}\) statt \(\scriptscriptstyle\matrix{6\\5\\3}\) für die erste Umkehrung, \(\scriptstyle\matrix{4\\3\\}\) statt \(\scriptscriptstyle\matrix{6\\4\\3}\) für die zweite Umkehrung und \(2\) statt \(\scriptscriptstyle\matrix{6\\4\\2}\) für die dritte Umkehrung.
+            Die Abkürzungen decken sich auch mit den üblichen Namen für die jeweiligen Umkehrungen. <b>Achtung:</b> Es werden stets die leitereigenen Septakkorde und nicht etwa der Dominantseptakkord C<sup>7</sup> oder ähnliche gebildet.
+        </p>
+
+        <center>
+            <h3>Vorzeichen</h3>
+        </center>
+        <center>
+            <img src="./media/7b.png" width="200px">
+        </center>
+
+        <p>
+            Steht hinter einer Ziffer ein Vorzeichen, wird das entsprechende Intervall gemäß dem Vorzeichen verändert (im Beispiel erhält die Septime h ein &#9837;-Vorzeichen und wird zum b).
+        </p>
+
+        <center>
+            <h3>Waagerechter Strich</h3>
+        </center>
+        <center>
+            <img src="./media/strich.png" width="250px">
+        </center>
+
+        <p>
+            Die Bezifferung der ersten Bassnote wird ausgehalten, es wird nicht weiter harmonisiert.
+        </p>
+
+
+
+
+            <script>
+                function doFunction() {
+                    alert("Hallo");
+                }
+
+                function int_a_gen() {
+                    nameArray = ["reine Prime", "kleine Sekunde", "große Sekunde", "kleine Terz", "große Terz", "reine Quarte", "übermäßige Quarte/verminderte Quinte", "reine Quinte", "kleine Sexte", "große Sexte", "kleine Septime", "große Septime", "reine Oktave"];
+                    fileArray = ["./media/int_r1.mp3", "./media/int_k2_a.mp3", "./media/int_g2_a.mp3", "./media/int_k3_a.mp3", "./media/int_g3_a.mp3", "./media/int_r4_a.mp3", "./media/int_tr_a.mp3", "./media/int_r5_a.mp3", "./media/int_k6_a.mp3", "./media/int_g6_a.mp3", "./media/int_k7_a.mp3", "./media/int_g7_a.mp3", "./media/int_r8_a.mp3"]
+                    var num = Math.floor(Math.random() * fileArray.length);
+                    var l = document.getElementById("int_a_aufloesen");
+                    l.innerText = nameArray[num];
+                    l.style.visibility = "hidden";
+                    var x = document.getElementById("int_a_audio");
+                    x.src = fileArray[num];
+                    
+                    var audio = document.getElementById("int_a_audio");
+                    audio.volume = 0.2;
+                    audio.autoplay = true;
+                    audio.load();
+                }
+
+                function int_a_aufloesen() {
+                    var l = document.getElementById("int_a_aufloesen");
+                    l.style.visibility = "visible";
+                }           
+              </script>
+              
+    </div>
+    <std-foot></std-foot>
+</body>
+</html>

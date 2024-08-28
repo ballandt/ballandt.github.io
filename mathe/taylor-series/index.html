@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>ballandt | Taylor series</title>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+    <std-head></std-head>
+    <script src="/hf.js"></script>
+    <div class="std-main">
+        <p class="warning-disclaimer">This page is not finished yet.</p>
+        <h1><span class="sc">Taylor</span>-series</h1>
+            <h2>Introduction</h2>
+            <p>
+                The sine of a number is an essential value for many scientific calculations. It cannot simply be
+                obtained for any real value without the <span class="sc">Taylor</span>-series, a theorem by Brook Taylor
+                stating that any \(n\)-times differentiable function \(f\) at \(a\) can be characterised by the polynomial
+                \begin{align}
+                \newcommand\at[2]{\left.#1\right|_{#2}}
+                f(x) = \sum_{n=0}^{\infty} \frac{(x-a)^n}{n!} \cdot \at{\frac{d^ny}{dx^n}}{x=a}
+                \end{align}
+                With this algorithm, many complicated functions can be simplified and calculated numerically.
+            </p>
+            <h2>Algorithm</h2>
+            <p>
+                This example will show the implementation of a certain function, the sine of a number. The <span class="sc">Taylor</span>-series
+                will be developed from \(a=0\). Firstly, the second term of the summation formula will be regarded. For any even \(n\) the \(n\) derivative of
+                the sine is either \(y=\sin x\) or \(y=-\sin x\). At the point \(a=0\) both of them are equal to zero which means that every even term of the sum
+                can be neglegated. For every odd \(n\) the term is either \(\cos 0 = 1\) or \(-\cos 0 = -1\), indicating that the odd terms are alternating.
+                The first term can be simplified because \(a\) can be neglegated. This gives the specified <span class="sc">Taylor</span>-expansion of the sine of a number
+                \begin{align}
+                \sin x = \frac{x}{1!} - \frac{x^3}{3!} + \frac{x^5}{5!} \pm \cdots \pm \frac{x^n}{n!} = \sum_{k=0}^{\infty} (-1)^{k} \frac{x^{2k+1}}{(2k+1)!} 
+                \end{align}
+                Analysing this formula it can be seen that it converges rapidly for small \(x\) values because in this case the factorials in the denominator increase
+                much faster than the exponentials in the numerator. For the sine function this instant can be used because the sine function is periodical in the form that
+                \(\sin x = \sin(x \mod 2\pi)\). Using this period greater values can be avoided.
+            </p>
+            <h2>Implementation</h2>
+
+            <!-- <pre><code class="python">import math.pi
+    def sin(x):
+        x %= 2 * math.pi
+        sine = x
+        k = 1
+        while</code></pre> -->
+
+        <pre><code class="python">def f(x):
+            """Function giving the curve"""
+            return x**2 - x
+        
+        def diff(func, x, h=1e-6):
+            """Derivative function"""
+            return (func(x + h) - func(x)) / h
+        
+        def tangent(func, P):
+            """Function constructing the tangent"""
+            x = P[0]
+            y = P[1]
+            m = diff(func, x)
+            n = y - m * x
+            return y, m, x, n
+                </code></pre>
+
+            <h2>Conclusion</h2>
+    </div>
+    <std-foot></std-foot>
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</html>

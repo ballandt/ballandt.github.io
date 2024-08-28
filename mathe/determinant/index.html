@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/github-dark.min.css">
+    <title>Determinant</title>
+</head>
+<body>
+    <std-head></std-head>
+    <script src="/hf.js"></script> 
+    <div class="std-main">
+        <p class="warning-disclaimer">This page is not finished yet.</p>
+        <h1>Determinant</h1>
+
+            <h2>Introduction</h2>
+            <p>
+                The determinant is an index of a squared matrix obtained by the determinant function \( \det: \mathbb{R}^{m\times m} \rightarrow \mathbb{R} \)
+                that provides information about
+                the manner of its transformation, the solutions of the encoded simultaneous and is
+                necessary to find the eigenvalues of the matrix. The calculation of the determinant needs a huge amount
+                of steps increasing with the dimension of the matrix.
+            </p>
+            <h2>Algorithm</h2>
+            <p>
+                The mathematical definition of the determinant function states for a matrix \( A \in \mathbb{R}^{1\times 1} \) the determinant
+                is calculated using
+                \begin{align}
+                \det \left( \left[ \begin{matrix} a_{11} \end{matrix} \right] \right) = a_{11}
+                \end{align}
+    
+                Matrices of dimensions \( A \in \mathbb{R}^{n\times n} \) do not have an explicite formula, but are defined relatively using
+                \begin{align}
+                \det(A) = \sum_{i=1}^n (-1)^{i+j} \cdot a_{ij} \cdot \det(A_{ij})
+                \end{align}
+    
+                where \(j\) is the index of the column from which the determinant is &laquo;developed&raquo; and \( A_{ij}\) means the matrix
+                without the \(i\)-th row and the \(j\)-th column. This formula has to be repeated untill the matrices \( A_{ij}\)
+                are reduced to the form \(A_{ij}\in\mathbb{R}^{1\times 1} \).
+            </p>
+    </div> 
+    <std-foot></std-foot> 
+</body>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</html>

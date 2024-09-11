@@ -1,7 +1,7 @@
 :root{
   --fgc: rgb(88, 98, 207);
   --fgca1: rgb(96, 105, 209);
-  --fgca2: rgb(113, 121, 205);
+  --fgca2: rgb(140, 145, 206);
 }
 
 *{
@@ -158,6 +158,11 @@ button:active{
   background-color: var(--fgca2);
 }
 
+button:disabled{
+  color: lightgray;
+  background-color: var(--fgca2);
+}
+
 hr{
   line-height: 1%;
 }
@@ -242,3 +247,4 @@ footer{
   z-index: 1;
   height: 3vh;
 }
+

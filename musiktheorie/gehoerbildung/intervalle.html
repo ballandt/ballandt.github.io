@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="/style.css">
@@ -11,9 +12,24 @@
         <h1>Intervalle hören</h1>
 
         <h2>Intervalle aufwärts</h2>
+
+
+        <input type="checkbox" id="auf" onclick="aufF()">
+        <label for="auf">aufwärts</label><br>
+        <input type="checkbox" id="ab" onclick="abF()">
+        <label for="ab">abwärts</label><br class="space">
+        <input type="checkbox" id="nach" onclick="nachF()">
+        <label for="nach">nacheinander</label>
+        <input type="checkbox" id="gleich" onclick="gleichF()">
+        <label for="gleich">gleichzeitig</label>
+
+        <br class="space">
+        <p style="color: red; visibility: hidden;" id="fehler">Aufwärts und/oder abwärts auswählen!</p>
+
+
         <center>
-            <button id="int_a_button" onclick="int_a_gen();">
-                Neues Intervall aufrufen
+            <button id="int_a_button" onclick="int_a_gen();" disabled>
+                Neues Intervall erzeugen
             </button>
         </center>
         <center>
@@ -23,7 +39,7 @@
         </center>
             
         <center>
-            <button id="int_a_button" onclick="int_a_aufloesen();">
+            <button id="int_a_button2" onclick="int_a_aufloesen();">
                 Auflösen
             </button>
             <p id="int_a_aufloesen" style="visibility: hidden;">Placeholder</p>
@@ -31,44 +47,104 @@
         <hr>
 
 <script>
-    function doFunction() {
-        alert("Hallo");
+    var auf;
+    var ab;
+    var nach;
+
+    function aufF(){
+        document.getElementById("fehler").style.visibility = "hidden";
+        if(!document.getElementById("nach").checked){
+            document.getElementById("nach").checked = true;
+        }
+        if((document.getElementById("auf").checked == false) && (document.getElementById("ab").checked == false)){
+            document.getElementById("auf").checked = true;
+        }
+        auf = document.getElementById("auf").checked
+        document.getElementById("int_a_button").disabled = false;
     }
 
+    function abF(){
+        document.getElementById("fehler").style.visibility = "hidden";
+        if(!document.getElementById("nach").checked){
+            document.getElementById("nach").checked = true;
+        }
+        if((document.getElementById("auf").checked == false) && (document.getElementById("ab").checked == false)){
+            document.getElementById("ab").checked = true;
+        }
+        ab = document.getElementById("ab").checked
+        document.getElementById("int_a_button").disabled = false;
+    }
+
+    function nachF(){
+        if(document.getElementById("gleich").checked == false){
+            document.getElementById("nach").checked = true;
+        }
+        if(!document.getElementById("auf").checked && !document.getElementById("ab").checked){
+            document.getElementById("fehler").style.visibility = "visible";
+        }
+        nach = true;
+        document.getElementById("gleich").checked = false;
+        document.getElementById("auf").disabled = false;
+        document.getElementById("ab").disabled = false;
+    }
+
+    function gleichF(){
+        if(document.getElementById("nach").checked == false){
+            document.getElementById("gleich").checked = true;
+        }
+        nach = false;
+        document.getElementById("nach").checked = false;
+        document.getElementById("auf").disabled = true;
+        document.getElementById("ab").disabled = true;
+        document.getElementById("int_a_button").disabled = false;
+    }
+
+    var stufe;
+    intNamen = ["reine Prime", "kleine Sekunde", "große Sekunde", "kleine Terz", "große Terz", "reine Quarte", "übermäßige Quarte/verminderte Quinte", "reine Quinte", "kleine Sexte", "große Sexte", "kleine Septime", "große Septime", "reine Oktave"];
+    function zufall(min, max){
+        var n = Math.random() * (max - min) + min;
+        return Math.round(n);
+    }   
+
     function int_a_gen() {
-        nameArray = ["reine Prime", "kleine Sekunde", "große Sekunde", "kleine Terz", "große Terz", "reine Quarte", "übermäßige Quarte/verminderte Quinte", "reine Quinte", "kleine Sexte", "große Sexte", "kleine Septime", "große Septime", "reine Oktave"];
-        fileArray = ["./media/int_r1.mp3", "./media/int_k2_a.mp3", "./media/int_g2_a.mp3", "./media/int_k3_a.mp3", "./media/int_g3_a.mp3", "./media/int_r4_a.mp3", "./media/int_tr_a.mp3", "./media/int_r5_a.mp3", "./media/int_k6_a.mp3", "./media/int_g6_a.mp3", "./media/int_k7_a.mp3", "./media/int_g7_a.mp3", "./media/int_r8_a.mp3"]
-        var num = Math.floor(Math.random() * fileArray.length);
+        var button = document.getElementById("int_a_button");
+        var aud = document.getElementById("int_a_audio");
+        if(document.getElementById("gleich").checked){
+            min = 25;
+            max = 36;
+        }else{
+            min = 13;
+            max = 12;
+            if(document.getElementById("auf").checked){
+                min = 0;
+            }
+            if(document.getElementById("ab").checked){
+                max = 24;
+            }
+        }
+        stufe = zufall(min, max);
+        aud.src = "./int-media/" + String(stufe) + ".mp3";
+        aud.volume = 0.2;
+        aud.autoplay = true;
+        aud.load();
         var l = document.getElementById("int_a_aufloesen");
-        l.innerText = nameArray[num];
         l.style.visibility = "hidden";
-        var x = document.getElementById("int_a_audio");
-        x.src = fileArray[num];
-        
-        var audio = document.getElementById("int_a_audio");
-        audio.volume = 0.2;
-        audio.autoplay = true;
-        audio.load();
     }
 
     function int_a_aufloesen() {
         var l = document.getElementById("int_a_aufloesen");
+        var aufl;
+        aufl = intNamen[stufe % 13];
+        if(stufe < 26){
+            if(stufe < 13){
+                aufl += " aufwärts";
+            }else{
+                aufl += " abwärts";
+            }
+        }
+        l.innerText = aufl;
         l.style.visibility = "visible";
     }
-
-    function myFunction() {
-        fileArray = ["file1.mp3","file2.mp3"];
-        var num = Math.floor(Math.random() * fileArray.length);
-        var x = document.getElementById("music");
-        x.src = fileArray[num]; 
-
-        var audio = document.getElementById("music");
-        audio.volume = 0.2;
-        audio.autoplay = true;
-        audio.load();
-    }
-
-    //myFunction()
 
     </script>
               

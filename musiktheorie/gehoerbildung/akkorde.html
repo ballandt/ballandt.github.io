@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+    <title>Akkorde</title>
+</head>
+<body>
+    <std-head></std-head>
+    <script src="/hf.js"></script>
+    <theorie-nav></theorie-nav>
+    <div class="musiktheorie-main">
+        <h1>Akkorde hören</h1>
+
+
+        <input type="checkbox" id="dur" onclick="check('d', document.getElementById('dur').checked)">
+        <label for="dur">Dur-Dreiklang</label>
+        <input type="checkbox" id="du" onclick="check('du', document.getElementById('du').checked)" disabled>
+        <label for="moll7u">Umkehrungen</label><br>
+        <input type="checkbox" id="moll" onclick="check('m', document.getElementById('moll').checked)">
+        <label for="moll">Moll-Dreiklang</label>
+        <input type="checkbox" id="mu" onclick="check('mu', document.getElementById('mu').checked)" disabled>
+        <label for="moll7u">Umkehrungen</label><br>
+        <input type="checkbox" id="dur7" onclick="check('d7', document.getElementById('dur7').checked)">
+        <label for="dur7">Dur-Septimakkord</label>
+        <input type="checkbox" id="dur7u" onclick="check('d7u', document.getElementById('dur7u').checked)" disabled>
+        <label for="dur7">Umkehrungen</label><br>
+        <input type="checkbox" id="moll7" onclick="check('m7', document.getElementById('moll7').checked)">
+        <label for="moll7">Moll-Septimakkord</label>
+        <input type="checkbox" id="moll7u" onclick="check('m7u', document.getElementById('moll7u').checked)" disabled>
+        <label for="moll7u">Umkehrungen</label><br>
+        <input type="checkbox" id="halbv" onclick="check('hv', document.getElementById('halbv').checked)">
+        <label for="moll7">Halbvermindert</label><br>
+        <input type="checkbox" id="v" onclick="check('v', document.getElementById('v').checked)">
+        <label for="moll7">Vermindert</label><br>
+
+        <br class="space">
+        <p style="color: red; visibility: hidden;" id="fehler">Aufwärts und/oder abwärts auswählen!</p>
+
+
+        <center>
+            <button id="button" onclick="gen();" disabled>
+                Neues Intervall erzeugen
+            </button>
+        </center>
+        <center>
+            <audio id="int_a_audio" controls autoplay>
+                <source src="" type="audio/mpeg">
+            </audio>
+        </center>
+            
+        <center>
+            <button id="int_a_button2" onclick="int_a_aufloesen();">
+                Auflösen
+            </button>
+            <p id="int_a_aufloesen" style="visibility: hidden;">Placeholder</p>
+        </center>
+        <hr>
+
+<script>
+    var d, du, m, mu, d7, m7, hv, v, d7u, m7u;
+    var choice = [];
+
+    function zufall(min, max){
+        var n = Math.random() * (max - min) + min;
+        return Math.round(n);
+    }  
+
+    function check(arg, checked){}
+        document.getElementById("du").disabled=true;
+        document.getElementById("mu").disabled=true;
+        document.getElementById("dur7u").disabled=true;
+        document.getElementById("moll7u").disabled=true;
+        eval(arg+"="+String(checked));
+        if(d||m||d7||m7||hv||v){
+            document.getElementById("button").disabled = false;
+        }else{
+            document.getElementById("button").disabled = true;
+        }
+        if(d){choice.push(1, 2);document.getElementById("du").disabled=false;}
+        if(du){choice.push(3, 4, 5, 6)}
+        if(m){choice.push(7, 8);document.getElementById("mu").disabled=false;}
+        if(mu){choice.push(9, 10, 11, 12)}
+        if(d7){choice.push(13, 14);document.getElementById("dur7u").disabled=false;}
+        if(m7){choice.push(15, 16);document.getElementById("moll7u").disabled=false;}
+        if(hv){choice.push(17, 18);}
+        if(v){choice.push(19, 20);}
+        if(d7u){choice.push(21, 22, 23, 24, 25, 26);}
+        if(m7u){choice.push(27, 28, 29, 30, 31, 32);}
+    }
+
+    window.addEventListener("click", check("d", false));
+
+    function gen(){
+        alert(choice[zufall(0, choice.length - 1)]);
+    }
+
+    </script>
+              
+    </div>
+    <std-foot></std-foot>
+</body>
+</html>
